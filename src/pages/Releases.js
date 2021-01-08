@@ -49,7 +49,7 @@ const ReleasesList = styled(motion.div)`
 const IndividualRelease = styled(motion.div)`
   min-height: 80vh;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1rem;
 `;
 export default Home;

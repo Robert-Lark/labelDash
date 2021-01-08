@@ -1,11 +1,18 @@
 import React from "react";
+import {useDispatch} from 'react-redux'
 import styled from "styled-components";
 import {motion} from "framer-motion";
+import {loadDetail} from "../actions/detailReleaseAction";
 
 
-function Release({name, format, released, image}) {
+
+function Release({name, format, released, image, id}) {
+  const dispatch = useDispatch();
+  const loadDetailHandler=() => {
+    dispatch(loadDetail(id))
+    }
   return (
-    <StyledRelease>
+    <StyledRelease onClick={loadDetailHandler}>
       <h3>{name}</h3>
       <h5>{format}</h5>
       <p>{released}</p>
@@ -15,7 +22,7 @@ function Release({name, format, released, image}) {
 }
 
 const StyledRelease = styled(motion.div)`
-max-width: 20vh;
+max-width: 25vh;
 
   min-height: 20vh;
   box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.2);
