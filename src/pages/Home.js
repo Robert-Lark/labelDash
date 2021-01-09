@@ -4,7 +4,7 @@ import GameDetail from '../components/GameDetail'
 import {useDispatch, useSelector} from "react-redux";
 import {loadGames} from "../actions/gamesActions";
 import {useLocation} from 'react-router-dom'
-//import {loadReleases} from '../actions/releasesActions'
+
 
 //Components
 import Game from "../components/Game";
@@ -21,8 +21,8 @@ function Home(props) {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(loadGames());
-    //   dispatch(loadReleases())
   }, [dispatch]);
+  
   const {popular, newGames, upcoming} = useSelector((state) => state.games);
 
   return (

@@ -1,28 +1,30 @@
 import React from "react";
-import {useDispatch} from 'react-redux'
+import {useDispatch} from "react-redux";
 import styled from "styled-components";
 import {motion} from "framer-motion";
 import {loadDetail} from "../actions/detailReleaseAction";
-
-
+import {Link} from "react-router-dom";
 
 function Release({name, format, released, image, id}) {
   const dispatch = useDispatch();
-  const loadDetailHandler=() => {
-    dispatch(loadDetail(id))
-    }
+  const loadDetailHandler = () => {
+    document.body.style.overflow = "hidden";
+    dispatch(loadDetail(id));
+  };
   return (
     <StyledRelease onClick={loadDetailHandler}>
-      <h3>{name}</h3>
-      <h5>{format}</h5>
-      <p>{released}</p>
-      <img src={image} alt={name} />
+      <Link to={`/release/${id}`}>
+        <h3>{name}</h3>
+        <h5>{format}</h5>
+        <p>{released}</p>
+        <img src={image} alt={name} />
+      </Link>
     </StyledRelease>
   );
 }
 
 const StyledRelease = styled(motion.div)`
-max-width: 25vh;
+  max-width: 25vh;
 
   min-height: 20vh;
   box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.2);

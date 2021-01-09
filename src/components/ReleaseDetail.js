@@ -4,11 +4,12 @@ import {motion} from "framer-motion";
 import {useSelector} from "react-redux";
 import {useHistory} from "react-router-dom";
 
-function GameDetail(props) {
+function ReleaseDetail(props) {
   const history = useHistory();
-  const {gameScreenshots, game, isLoading} = useSelector(
+  const {detail, isLoading} = useSelector(
     (state) => state.detail
   );
+  console.log(detail)
   const exitDetailHandler = (e) => {
     const element = e.target;
     if (element.classList.contains("shadow")) {
@@ -24,30 +25,31 @@ function GameDetail(props) {
           <Detail>
             <Stats>
               <div className="rating">
-                <h3>{game.name}</h3>
-                <p>Rating: {game.rating}</p>
+                <h2>{detail.artists_sort}</h2>
+               <h3>{detail.title}</h3>
+               {/*   <p>Rating: {detail.rating}</p> */}
               </div>
               <Info>
                 <h3>Platforms</h3>
                 <Platforms>
-                  {game.platforms &&
-                    game.platforms.map((data) => (
+                  {/* {detail.platforms &&
+                    detail.platforms.map((data) => (
                       <h3 key={data.platform.id}>{data.platform.name}</h3>
-                    ))}
+                    ))} */}
                 </Platforms>
               </Info>
             </Stats>
             <Media>
-              <img src={game.background_image} alt="game" />
+              {/* <img src={detail.background_image} alt="detail" /> */}
             </Media>
             <Description>
-              <p>{game.description_raw}</p>
+              {/* <p>{detail.description_raw}</p> */}
             </Description>
             <div className="gallery">
-              {gameScreenshots &&
-                gameScreenshots.results.map((screen) => (
-                  <img key={screen.id} src={screen.image} alt="game" />
-                ))}
+              {/* {detailScreenshots &&
+                detailScreenshots.results.map((screen) => (
+                  <img key={screen.id} src={screen.image} alt="detail" />
+                ))} */}
             </div>
           </Detail>
         </CardShadow>
@@ -114,4 +116,4 @@ const Description = styled(motion.div)`
   margin: 5rem 0rem;
 `;
 
-export default GameDetail;
+export default ReleaseDetail;

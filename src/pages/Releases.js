@@ -1,8 +1,8 @@
 import React, {useEffect} from "react";
-
+import ReleaseDetail from '../components/ReleaseDetail'
 //redux
 import {useDispatch, useSelector} from "react-redux";
-
+import {useLocation} from 'react-router-dom'
 import {loadReleases} from "../actions/releasesActions";
 
 //Components
@@ -13,6 +13,9 @@ import styled from "styled-components";
 import {motion} from "framer-motion";
 
 function Home(props) {
+  const location = useLocation()
+  const pathId = location.pathname.split("/")[2];
+
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(loadReleases());
@@ -22,6 +25,7 @@ function Home(props) {
   
   return (
     <ReleasesList>
+        {pathId && <ReleaseDetail/>}
       <h2>Denovali</h2>
       <IndividualRelease>
         {releaseInfo.map((release) => {
