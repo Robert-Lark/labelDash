@@ -10,9 +10,10 @@ export const label = (labelId, pageNumber) =>
 
 //RELEASE DETAILS
 export const releaseDetailsURL = (releaseId) =>
-  `${base_url}masters/${releaseId}`;
+  `${base_url}releases/${releaseId}`;
   
 
 //FORMAT DETAILS
 
 export const formatDetailsURL = (releaseId) => `${base_url}masters/${releaseId}/versions`
+

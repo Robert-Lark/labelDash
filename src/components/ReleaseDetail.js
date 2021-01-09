@@ -3,13 +3,13 @@ import styled from "styled-components";
 import {motion} from "framer-motion";
 import {useSelector} from "react-redux";
 import {useHistory} from "react-router-dom";
+import {formatDetailsURL} from "../APIs/discogs";
+import ReactPlayer from "react-player/youtube";
 
 function ReleaseDetail(props) {
   const history = useHistory();
-  const {detail, isLoading} = useSelector(
-    (state) => state.detail
-  );
-  console.log(detail)
+  const {detail, isLoading} = useSelector((state) => state.detail);
+  console.log(detail);
   const exitDetailHandler = (e) => {
     const element = e.target;
     if (element.classList.contains("shadow")) {
@@ -25,31 +25,60 @@ function ReleaseDetail(props) {
           <Detail>
             <Stats>
               <div className="rating">
-                <h2>{detail.artists_sort}</h2>
-               <h3>{detail.title}</h3>
-               {/*   <p>Rating: {detail.rating}</p> */}
+                <h1>{detail.artists_sort}</h1>
+                <h2>{detail.title}</h2>
+                {detail.labels.map((label) => (
+                  <h3>{label.name}</h3>
+                ))}
+                {detail.genres.map((label) => (
+                  <h4>{label}</h4>
+                ))}
+                <br></br>
+                <h5>{detail.released}</h5>
               </div>
               <Info>
-                <h3>Platforms</h3>
-                <Platforms>
-                  {/* {detail.platforms &&
-                    detail.platforms.map((data) => (
-                      <h3 key={data.platform.id}>{data.platform.name}</h3>
-                    ))} */}
-                </Platforms>
+                <h3>Tracklist</h3>
+                <Tracklist>
+                  {detail.tracklist.map((track) => (
+                    <p>
+                      {track.position}: {track.title}
+                    </p>
+                  ))}
+                </Tracklist>
               </Info>
             </Stats>
             <Media>
               {/* <img src={detail.background_image} alt="detail" /> */}
             </Media>
             <Description>
-              {/* <p>{detail.description_raw}</p> */}
+              <p>{detail.notes}</p>
             </Description>
-            <div className="gallery">
-              {/* {detailScreenshots &&
-                detailScreenshots.results.map((screen) => (
-                  <img key={screen.id} src={screen.image} alt="detail" />
-                ))} */}
+            <Gallery>
+              {detail.videos.map((video) => (
+                <>
+                  <h3>{video.title}</h3>
+                  <ReactPlayer url={video.uri} />
+                </>
+              ))}
+            </Gallery>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                marginTop: "20px",
+              }}
+            >
+              <button
+                onClick={() => {
+                  window.scroll({
+                    top: 0,
+                    left: 0,
+                    behavior: "smooth",
+                  });
+                }}
+              >
+                Return to the top
+              </button>
             </div>
           </Detail>
         </CardShadow>
@@ -97,8 +126,10 @@ const Stats = styled(motion.div)`
 const Info = styled(motion.div)`
   text-align: center;
 `;
-const Platforms = styled(motion.div)`
+const Tracklist = styled(motion.div)`
   display: flex;
+  flex-direction: column;
+
   justify-content: space-evenly;
   img {
     margin-left: 3rem;
@@ -114,6 +145,30 @@ const Media = styled(motion.div)`
 `;
 const Description = styled(motion.div)`
   margin: 5rem 0rem;
+`;
+const Gallery = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const Button = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    border: 2px solid rgb(65, 65, 65);
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: rgb(65, 65, 65);
+      color: white;
+    }
+  }
 `;
 
 export default ReleaseDetail;

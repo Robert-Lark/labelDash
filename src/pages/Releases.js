@@ -28,6 +28,7 @@ function Home(props) {
         {pathId && <ReleaseDetail/>}
       <h2>Denovali</h2>
       <IndividualRelease>
+       {/* eslint-disable-next-line */}
         {releaseInfo.map((release) => {
              if (release.format.includes("LP" )) return (
            <Release
