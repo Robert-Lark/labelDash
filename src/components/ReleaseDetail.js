@@ -3,13 +3,15 @@ import styled from "styled-components";
 import {motion} from "framer-motion";
 import {useSelector} from "react-redux";
 import {useHistory} from "react-router-dom";
-import {formatDetailsURL} from "../APIs/discogs";
+// import {formatDetailsURL} from "../APIs/discogs";
 import ReactPlayer from "react-player/youtube";
 
-function ReleaseDetail(props) {
+function ReleaseDetail({ pathId }) {
   const history = useHistory();
   const {detail, isLoading} = useSelector((state) => state.detail);
   console.log(detail);
+
+
   const exitDetailHandler = (e) => {
     const element = e.target;
     if (element.classList.contains("shadow")) {
@@ -22,11 +24,11 @@ function ReleaseDetail(props) {
     <>
       {!isLoading && (
         <CardShadow className="shadow" onClick={exitDetailHandler}>
-          <Detail>
+           <Detail layoutId={pathId}>
             <Stats>
               <div className="rating">
-                <h1>{detail.artists_sort}</h1>
-                <h2>{detail.title}</h2>
+                <motion.h1 layoutId={`title ${pathId}`}>{detail.artists_sort}</motion.h1>
+                <motion.h2 layoutId={`title ${pathId}`}>{detail.title}</motion.h2>
                 {detail.labels.map((label) => (
                   <h3>{label.name}</h3>
                 ))}
@@ -54,7 +56,9 @@ function ReleaseDetail(props) {
               <p>{detail.notes}</p>
             </Description>
             <Gallery>
-              {detail.videos.map((video) => (
+              {
+              detail.videos && 
+              detail.videos.map((video) => (
                 <>
                   <h3>{video.title}</h3>
                   <ReactPlayer url={video.uri} />

@@ -1,8 +1,8 @@
 import React, {useEffect} from "react";
-import ReleaseDetail from '../components/ReleaseDetail'
+import ReleaseDetail from "../components/ReleaseDetail";
 //redux
 import {useDispatch, useSelector} from "react-redux";
-import {useLocation} from 'react-router-dom'
+import {useLocation} from "react-router-dom";
 import {loadReleases} from "../actions/releasesActions";
 
 //Components
@@ -10,10 +10,10 @@ import Release from "../components/Release";
 
 //styling
 import styled from "styled-components";
-import {motion} from "framer-motion";
+import {motion, AnimatePresence, AnimateSharedLayout} from "framer-motion";
 
 function Home(props) {
-  const location = useLocation()
+  const location = useLocation();
   const pathId = location.pathname.split("/")[2];
 
   const dispatch = useDispatch();
@@ -22,31 +22,38 @@ function Home(props) {
   }, [dispatch]);
 
   const releaseInfo = useSelector((state) => state.releases.all);
-  
+const reg = new RegExp("File")
   return (
     <ReleasesList>
-        {pathId && <ReleaseDetail/>}
-      <h2>Denovali</h2>
-      <IndividualRelease>
-       {/* eslint-disable-next-line */}
-        {releaseInfo.map((release) => {
-             if (release.format.includes("LP" )) return (
-           <Release
-            name={release.title}
-            format={release.format}
-            released={release.year}
-            id={release.id}
-            image={release.thumb}
-            key={release.id}
-          />
-        )})}
-      </IndividualRelease>
+      <AnimateSharedLayout type="crossfade">
+        <AnimatePresence>
+          {pathId && <ReleaseDetail pathId={pathId} />}
+        </AnimatePresence>
+        <h2>Denovali</h2>
+        <IndividualRelease>
+          {/* eslint-disable-next-line */}
+          {releaseInfo.map((release) => {
+            if (!reg.test(release.format))
+              return (
+                <Release
+                  name={release.title}
+                  format={release.format}
+                  released={release.year}
+                  id={release.id}
+                  image={release.thumb}
+                  key={release.id}
+                />
+              );
+          })}
+        </IndividualRelease>
+      </AnimateSharedLayout>
     </ReleasesList>
   );
 }
 
 const ReleasesList = styled(motion.div)`
   padding: 0rem 5rem;
+
   h2 {
     padding: 5rem 0rem;
   }
