@@ -2,13 +2,14 @@ import React from "react";
 import GlobalStyles from './components/GlobalStyles'
 
 import {Route} from 'react-router-dom'
-import Releases from './pages/Releases'
+
+import Dashboard from "./pages/Dashboard";
 function App() {
   return (
     <div className="App">
       <GlobalStyles></GlobalStyles>
       <Route path={["/release/id", "/"]}></Route>
-<Releases/>
+<Dashboard/>
 
     </div>
   );

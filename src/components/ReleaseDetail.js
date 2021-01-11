@@ -72,7 +72,7 @@ function ReleaseDetail({ pathId }) {
                 marginTop: "20px",
               }}
             >
-              <button
+              <Button
                 onClick={() => {
                   window.scroll({
                     top: 0,
@@ -82,7 +82,7 @@ function ReleaseDetail({ pathId }) {
                 }}
               >
                 Return to the top
-              </button>
+              </Button>
             </div>
           </Detail>
         </CardShadow>
@@ -160,7 +160,7 @@ const Button = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 20px;
-  button {
+
     background: transparent;
     border: none;
     cursor: pointer;
@@ -172,7 +172,7 @@ const Button = styled.div`
       background: rgb(65, 65, 65);
       color: white;
     }
-  }
+
 `;
 
 export default ReleaseDetail;

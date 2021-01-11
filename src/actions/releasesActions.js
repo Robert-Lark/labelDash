@@ -1,28 +1,39 @@
 import axios from "axios";
-import {label} from "../APIs/discogs";
-
+import {labelReleases} from "../APIs/discogs";
+import {label} from '../APIs/discogs'
 //Action creator
 
-export const loadReleases = () => async (dispatch) => {
-  const releasesData = await axios.get(label(90336, 1));
+export const loadReleases = (id) => async (dispatch) => {
+
+    const pageNumber = await axios.get(labelReleases(id, 1));
+    let allData = [];
+    for(let i=1; i<=pageNumber.data.pagination.pages; i++) {
+    let data = await axios.get(labelReleases(id, i));
+        allData.push(data.data.releases)
+    }
+    let releasesData = [].concat.apply([], allData);
+
+  const labelData = await axios.get(label(id));
   //creates dictionary to store all unique records
   const releasesByTitle = {};
   const releases = [];
   //checks dictionary to see if record by a certain title is already in the dictionary
   //if it is, skip this record, else, add it to the dictionary
-  releasesData.data.releases.map((release) => {
+  releasesData.map((release) => {
     if (!releasesByTitle[release.title]) {
+ if (!release.format.includes("File"))
       releasesByTitle[release.title] = release;
     }
   });
-  //add the records in dictionary to relseases array to pass to reducer
+  //add the records in dictionary to releases array to pass to reducer
   for(let prop in releasesByTitle){
       releases.push(releasesByTitle[prop]);
   }
   dispatch({
     type: "FETCH_RELEASES",
     payload: {
-      all: releases
+      all: releases,
+      label: labelData.data
     },
   });
 };

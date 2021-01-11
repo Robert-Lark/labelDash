@@ -1,9 +1,8 @@
-import React, {useEffect} from "react";
+import React from "react";
 import ReleaseDetail from "../components/ReleaseDetail";
 //redux
-import {useDispatch, useSelector} from "react-redux";
+import { useSelector} from "react-redux";
 import {useLocation} from "react-router-dom";
-import {loadReleases} from "../actions/releasesActions";
 
 //Components
 import Release from "../components/Release";
@@ -12,40 +11,39 @@ import Release from "../components/Release";
 import styled from "styled-components";
 import {motion, AnimatePresence, AnimateSharedLayout} from "framer-motion";
 
-function Home(props) {
+function ReleasesSmall(props) {
   const location = useLocation();
   const pathId = location.pathname.split("/")[2];
 
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(loadReleases());
-  }, [dispatch]);
+
 
   const releaseInfo = useSelector((state) => state.releases.all);
-const reg = new RegExp("File")
-console.log(releaseInfo)
+  const labelInfo = useSelector((state) => state.releases.label);
+//const catNoReg = new RegExp("DEN\\s?\\d")
+const ordered = releaseInfo.sort((a, b) => b.year - a.year)
   return (
     <ReleasesList>
       <AnimateSharedLayout type="crossfade">
         <AnimatePresence>
           {pathId && <ReleaseDetail pathId={pathId} />}
         </AnimatePresence>
-        <h2>Denovali</h2>
+        <h4 style={{paddingBottom: "50px"}}>{labelInfo.name}</h4>
+        <h4 style={{paddingBottom: "50px"}}>{labelInfo.profile}</h4>
         <IndividualRelease>
           {/* eslint-disable-next-line */}
-          {releaseInfo.map((release) => {
-            if (!reg.test(release.format))
+          {ordered.map((release) => {
               return (
                 <Release
                   name={release.title}
                   format={release.format}
-                  artist={release.artist}
                   released={release.year}
+                  artist={release.artist}
                   id={release.id}
                   image={release.thumb}
                   key={release.id}
+                  catno={release.catno}
                 />
-              );
+              )
           })}
         </IndividualRelease>
       </AnimateSharedLayout>
@@ -63,7 +61,7 @@ const ReleasesList = styled(motion.div)`
 const IndividualRelease = styled(motion.div)`
   min-height: 80vh;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   gap: 1rem;
 `;
-export default Home;
+export default ReleasesSmall;

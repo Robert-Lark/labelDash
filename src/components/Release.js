@@ -5,7 +5,8 @@ import {motion} from "framer-motion";
 import {loadDetail} from "../actions/detailReleaseAction";
 import {Link} from "react-router-dom";
 
-function Release({name, format, released, image, id}) {
+function Release({name, image, id, artist}) {
+
   const stringPathId = id.toString();
   const dispatch = useDispatch();
   const loadDetailHandler = () => {
@@ -15,12 +16,11 @@ function Release({name, format, released, image, id}) {
   return (
     <StyledRelease layoutId={stringPathId} onClick={loadDetailHandler}>
       <Link to={`/release/${id}`}>
-        <StyledText>
-        <motion.h3 layoutId={`title ${stringPathId}`}>{name}</motion.h3>
-        <motion.h5 layoutId={`title ${stringPathId}`}>{format}</motion.h5>
-        <motion.p layoutId={`title ${stringPathId}`}>{released}</motion.p>
-        </StyledText>
         <img src={image} alt={name} />
+        <StyledText>
+        <motion.h5 >{artist}</motion.h5>
+          <motion.h5 >{name}</motion.h5>
+        </StyledText>
       </Link>
     </StyledRelease>
   );
@@ -35,11 +35,15 @@ const StyledRelease = styled(motion.div)`
   border-radius: 1rem;
   img {
     width: 100%;
-    height: 20vh;
+    height: 10vh;
     object-fit: cover;
   }
 `;
-const StyledText = styled.div`
 
+const StyledText = styled.div`
+h5 {
+  padding: 5px;
+  color: black;
+}
 `
 export default Release;
