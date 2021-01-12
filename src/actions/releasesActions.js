@@ -18,7 +18,10 @@ export const loadReleases = (id) => async (dispatch) => {
   const releasesByTitle = {};
   const releases = [];
   //checks dictionary to see if record by a certain title is already in the dictionary
+            
   //if it is, skip this record, else, add it to the dictionary
+            
+            // eslint-disable-next-line
   releasesData.map((release) => {
     if (!releasesByTitle[release.title]) {
  if (!release.format.includes("File"))

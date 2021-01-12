@@ -19,15 +19,15 @@ function ReleasesSmall(props) {
 
   const releaseInfo = useSelector((state) => state.releases.all);
   const labelInfo = useSelector((state) => state.releases.label);
-//const catNoReg = new RegExp("DEN\\s?\\d")
 const ordered = releaseInfo.sort((a, b) => b.year - a.year)
+console.log(labelInfo.name)
   return (
     <ReleasesList>
       <AnimateSharedLayout type="crossfade">
         <AnimatePresence>
           {pathId && <ReleaseDetail pathId={pathId} />}
         </AnimatePresence>
-        <h4 style={{paddingBottom: "50px"}}>{labelInfo.name}</h4>
+        <h3 style={{paddingBottom: "50px"}}>{labelInfo.name}</h3>
         <h4 style={{paddingBottom: "50px"}}>{labelInfo.profile}</h4>
         <IndividualRelease>
           {/* eslint-disable-next-line */}

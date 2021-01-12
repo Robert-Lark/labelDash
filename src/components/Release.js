@@ -16,7 +16,7 @@ function Release({name, image, id, artist}) {
   return (
     <StyledRelease layoutId={stringPathId} onClick={loadDetailHandler}>
       <Link to={`/release/${id}`}>
-        <img src={image} alt={name} />
+        <motion.img src={image} alt={name} />
         <StyledText>
         <motion.h5 >{artist}</motion.h5>
           <motion.h5 >{name}</motion.h5>
