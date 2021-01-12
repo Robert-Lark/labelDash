@@ -61,14 +61,14 @@ function Dashboard() {
             />
           </Button>
         </ButtonContainer>
-        {data ? (
-          <ReleasesContainer>
-            <ReleasesSmall />
-          </ReleasesContainer>
-        ) : (
+        {data===0 ? (
           <InstructionContainer>
             <h2>Select a label to explore its Releases</h2>
           </InstructionContainer>
+        ) : (
+          <ReleasesContainer>
+            <ReleasesSmall />
+          </ReleasesContainer>
         )}
       </BodyContainer>
     </Container>
