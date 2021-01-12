@@ -20,7 +20,7 @@ function ReleasesSmall(props) {
   const releaseInfo = useSelector((state) => state.releases.all);
   const labelInfo = useSelector((state) => state.releases.label);
 const ordered = releaseInfo.sort((a, b) => b.year - a.year)
-console.log(labelInfo.name)
+
   return (
     <ReleasesList>
       <AnimateSharedLayout type="crossfade">

@@ -1,7 +1,7 @@
 const initState = {
   popular: [],
   newReleases: [],
-  all: null,
+  all: 0,
   label: [],
   preorders: [],
   search: [],
