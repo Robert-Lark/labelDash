@@ -5,12 +5,15 @@ const initState = {
   label: [],
   preorders: [],
   search: [],
+  loading: false
 };
 
 const releasesReducer = (state = initState, action) => {
   switch (action.type) {
     case "FETCH_RELEASES":
-      return {...state, all: action.payload.all, label: action.payload.label};
+      return {...state, loading: true};
+    case "FETCH_RELEASES_SUCCESS":
+      return {...state, all: action.payload.all, label: action.payload.label, loading: false};
     default:
       return {...state};
   }

@@ -7,17 +7,16 @@ import ErasedTapesLogo from "../img/ErasedTapesLogo.png";
 import kirecordsLogo from "../img/kirecordsLogo.jpg";
 import miasmah_logo from "../img/miasmah_logo.jpg";
 import SONICPIECES_LOGO from "../img/SONICPIECES_LOGO.jpg";
+import imageLoading from "../img/loading.jpeg";
 import ReleasesSmall from "./ReleasesSmall";
 import {useSelector} from "react-redux";
 
 function Dashboard() {
-  const data = useSelector((state) => state.releases.all);
-  console.log(data);
+  const {all, loading} = useSelector((state) => state.releases);
   const dispatch = useDispatch();
   const labelHandler = (id) => {
     dispatch(loadReleases(id));
   };
-
   return (
     <Container>
       <Nav>
@@ -61,15 +60,23 @@ function Dashboard() {
             />
           </Button>
         </ButtonContainer>
-        {data === 0 ? 
-          <InstructionContainer>
+        {all === 0 ? (
+          <InstructionContainer style={ loading ? { display:'none'} : {display : 'auto'} }  >
             <h2>Select a label to explore its Releases</h2>
           </InstructionContainer>
-         : 
+        ) : (
           <ReleasesContainer>
             <ReleasesSmall />
           </ReleasesContainer>
-        }
+        )}
+        {loading ? (
+          <InstructionContainer>
+            <LoadingImage src={imageLoading} alt="loading" />
+            <p>Loading</p>
+          </InstructionContainer>
+        ) : (
+          <></>
+        )}
       </BodyContainer>
     </Container>
   );
@@ -123,10 +130,13 @@ const ReleasesContainer = styled.div`
 const InstructionContainer = styled.div`
   height: 80vh;
   width: 55vw;
-
   display: flex;
   flex-direction: row;
   align-items: center;
 `;
-
+const LoadingImage = styled.img`
+  width: 13vw;
+  height: 20vh;
+  transform: rotate(360deg);
+`;
 export default Dashboard;

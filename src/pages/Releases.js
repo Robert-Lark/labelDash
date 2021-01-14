@@ -23,7 +23,6 @@ function Home(props) {
 
   const releaseInfo = useSelector((state) => state.releases.all);
 const reg = new RegExp("File")
-console.log(releaseInfo)
   return (
     <ReleasesList>
       <AnimateSharedLayout type="crossfade">

@@ -9,7 +9,7 @@ import ReactPlayer from "react-player/youtube";
 function ReleaseDetail({ pathId }) {
   const history = useHistory();
   const {detail, isLoading} = useSelector((state) => state.detail);
-  console.log(detail);
+
 
 
   const exitDetailHandler = (e) => {
