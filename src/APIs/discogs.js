@@ -16,5 +16,5 @@ export const releaseDetailsURL = (releaseId) =>
 
 //FORMAT DETAILS
 
-export const formatDetailsURL = (releaseId) =>
-  `${base_url}masters/${releaseId}/versions?key=${process.env.REACT_APP_DISCOGS_API_KEY}&secret=${process.env.REACT_APP_DISCOGS_API_SECRET}`;
+export const formatDetailsURL = (masterId) =>
+`${base_url}masters/${masterId}?key=${process.env.REACT_APP_DISCOGS_API_KEY}&secret=${process.env.REACT_APP_DISCOGS_API_SECRET}`;

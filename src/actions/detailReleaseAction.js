@@ -1,13 +1,16 @@
 import axios from "axios";
 import {releaseDetailsURL} from "../APIs/discogs";
 import {formatDetailsURL} from '../APIs/discogs'
-export const loadDetail = (id) => async (dispatch) => {
+
+export const loadDetail = (id, master) => async (dispatch) => {
+  const detailData = await axios.get(releaseDetailsURL(id));
+  const formatDetails = await axios.get(master).then(res =>  axios.get(formatDetailsURL(res.data.master_id)))
+
   dispatch({
     type: "LOADING_DETAIL",
   });
   
-  const detailData = await axios.get(releaseDetailsURL(id));
-  const formatDetails = await axios.get(formatDetailsURL(id))
+
   dispatch({
     type: "GET_DETAIL",
     payload: {

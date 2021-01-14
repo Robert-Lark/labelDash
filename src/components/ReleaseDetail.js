@@ -9,6 +9,8 @@ import ReactPlayer from "react-player/youtube";
 function ReleaseDetail({ pathId }) {
   const history = useHistory();
   const {detail, isLoading} = useSelector((state) => state.detail);
+  const masterInfo = useSelector((state) => state.detail.format);
+
 
 
 
@@ -29,12 +31,12 @@ function ReleaseDetail({ pathId }) {
               <div className="rating">
                 <motion.h1 layoutId={`title ${pathId}`}>{detail.artists_sort}</motion.h1>
                 <motion.h2 layoutId={`title ${pathId}`}>{detail.title}</motion.h2>
-                {detail.labels.map((label) => (
+                {/* {detail.labels.map((label) => (
                   <h3>{label.name}</h3>
                 ))}
                 {detail.genres.map((label) => (
                   <h4>{label}</h4>
-                ))}
+                ))} */}
                 <br></br>
                 <h5>{detail.released}</h5>
               </div>

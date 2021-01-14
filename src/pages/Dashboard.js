@@ -70,7 +70,7 @@ function Dashboard() {
           </ReleasesContainer>
         )}
         {loading ? (
-          <InstructionContainer>
+          <InstructionContainer style={all ? {display: "none"} : {display: "auto"}}>
             <LoadingImage src={imageLoading} alt="loading" />
             <p>Loading</p>
           </InstructionContainer>

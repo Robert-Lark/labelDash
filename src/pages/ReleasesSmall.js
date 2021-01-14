@@ -27,8 +27,10 @@ const ordered = releaseInfo.sort((a, b) => b.year - a.year)
         <AnimatePresence>
           {pathId && <ReleaseDetail pathId={pathId} />}
         </AnimatePresence>
-        <h3 style={{paddingBottom: "50px"}}>{labelInfo.name}</h3>
+        <div style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
+        <img src={labelInfo.images[0].resource_url}style={{paddingBottom: "50px", width: "20vw"}} alt={labelInfo.name}/>
         <h4 style={{paddingBottom: "50px"}}>{labelInfo.profile}</h4>
+        </div>
         <IndividualRelease>
           {/* eslint-disable-next-line */}
           {ordered.map((release) => {
@@ -39,6 +41,7 @@ const ordered = releaseInfo.sort((a, b) => b.year - a.year)
                   released={release.year}
                   artist={release.artist}
                   id={release.id}
+                  master={release.resource_url}
                   image={release.thumb}
                   key={release.id}
                   catno={release.catno}

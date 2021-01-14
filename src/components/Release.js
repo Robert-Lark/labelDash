@@ -5,18 +5,19 @@ import {motion} from "framer-motion";
 import {loadDetail} from "../actions/detailReleaseAction";
 import {Link} from "react-router-dom";
 
-function Release({name, image, id, artist}) {
+function Release({name, image, id, artist, master, format}) {
 
   const stringPathId = id.toString();
   const dispatch = useDispatch();
   const loadDetailHandler = () => {
     document.body.style.overflow = "hidden";
-    dispatch(loadDetail(id));
+    dispatch(loadDetail(id, master));
   };
   return (
     <StyledRelease layoutId={stringPathId} onClick={loadDetailHandler}>
       <Link to={`/release/${id}`}>
         <motion.img src={image} alt={name} />
+        {format.includes("LP") ? <h5>LP</h5> : format.includes("CD") ? <h5>CD</h5> : format.includes("12") ? <h5>12"</h5> : format.includes("10") ? <h5>10"</h5> : format.includes("7") ? <h5>7"</h5> : format.includes("File") ? <h5>Digital</h5> : <h5></h5>}
         <StyledText>
         <motion.h5 >{artist}</motion.h5>
           <motion.h5 >{name}</motion.h5>
