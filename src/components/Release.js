@@ -17,6 +17,7 @@ function Release({name, image, id, artist, master, format}) {
     <StyledRelease layoutId={stringPathId} onClick={loadDetailHandler}>
       <Link to={`/release/${id}`}>
         <motion.img src={image} alt={name} />
+        {/* eslint-disable-next-line */}
         {format.includes("LP") ? <h5>LP</h5> : format.includes("CD") ? <h5>CD</h5> : format.includes("12") ? <h5>12"</h5> : format.includes("10") ? <h5>10"</h5> : format.includes("7") ? <h5>7"</h5> : format.includes("File") ? <h5>Digital</h5> : <h5></h5>}
         <StyledText>
         <motion.h5 >{artist}</motion.h5>
