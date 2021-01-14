@@ -6,13 +6,12 @@ import {useHistory} from "react-router-dom";
 // import {formatDetailsURL} from "../APIs/discogs";
 import ReactPlayer from "react-player/youtube";
 
-function ReleaseDetail({ pathId }) {
+function ReleaseDetail({pathId}) {
   const history = useHistory();
   const {detail, isLoading} = useSelector((state) => state.detail);
-  //const masterInfo = useSelector((state) => state.detail.format);
+  const masterInfo = useSelector((state) => state.detail.format);
 
-
-
+  console.log(detail, masterInfo);
 
   const exitDetailHandler = (e) => {
     const element = e.target;
@@ -26,20 +25,25 @@ function ReleaseDetail({ pathId }) {
     <>
       {!isLoading && (
         <CardShadow className="shadow" onClick={exitDetailHandler}>
-           <Detail layoutId={pathId}>
+          <Detail layoutId={pathId}>
             <Stats>
-              <div className="rating">
-                <motion.h1 layoutId={`title ${pathId}`}>{detail.artists_sort}</motion.h1>
-                <motion.h2 layoutId={`title ${pathId}`}>{detail.title}</motion.h2>
-                {/* {detail.labels.map((label) => (
+              <div>
+                <h1>{detail.artists_sort}</h1>
+                <h3>{detail.title}</h3>
+                {detail.labels.map((label) => (
                   <h3>{label.name}</h3>
                 ))}
-                {detail.genres.map((label) => (
-                  <h4>{label}</h4>
-                ))} */}
-                <br></br>
                 <h5>{detail.released}</h5>
+                {detail.styles.map((genre) => (
+                  <h5>{genre}</h5>
+                ))}
+                <Button>LP</Button>
+                <Button>Limited</Button>
+                <Button>CD</Button>
               </div>
+              <CoverArt>
+                <img src={detail.images[0].resource_url} alt="cover"/>
+              </CoverArt>
               <Info>
                 <h3>Tracklist</h3>
                 <Tracklist>
@@ -51,21 +55,17 @@ function ReleaseDetail({ pathId }) {
                 </Tracklist>
               </Info>
             </Stats>
-            <Media>
-              {/* <img src={detail.background_image} alt="detail" /> */}
-            </Media>
             <Description>
               <p>{detail.notes}</p>
             </Description>
             <Gallery>
-              {
-              detail.videos && 
-              detail.videos.map((video) => (
-                <>
-                  <h3>{video.title}</h3>
-                  <ReactPlayer url={video.uri} />
-                </>
-              ))}
+              {detail.videos &&
+                detail.videos.map((video) => (
+                  <>
+                    <h3>{video.title}</h3>
+                    <ReactPlayer url={video.uri} />
+                  </>
+                ))}
             </Gallery>
             <div
               style={{
@@ -113,7 +113,9 @@ const CardShadow = styled(motion.div)`
 `;
 
 const Detail = styled(motion.div)`
+  display: grid;
   width: 80%;
+  margin-top: 20px;
   border-radius: 1rem;
   padding: 2rem 5rem;
   background: white;
@@ -125,8 +127,11 @@ const Detail = styled(motion.div)`
   }
 `;
 const Stats = styled(motion.div)`
+  h5 {
+    font-weight: lighter;
+  }
   display: flex;
-  align-items: center;
+
   justify-content: space-between;
 `;
 const Info = styled(motion.div)`
@@ -135,20 +140,19 @@ const Info = styled(motion.div)`
 const Tracklist = styled(motion.div)`
   display: flex;
   flex-direction: column;
-
   justify-content: space-evenly;
   img {
     margin-left: 3rem;
   }
 `;
-const Media = styled(motion.div)`
-  margin-top: 5rem;
-  img {
-    width: 100%;
-    height: 60vh;
-    object-fit: cover;
-  }
-`;
+// const Media = styled(motion.div)`
+//   margin-top: 5rem;
+//   img {
+//     width: 100%;
+//     height: 60vh;
+//     object-fit: cover;
+//   }
+// `;
 const Description = styled(motion.div)`
   margin: 5rem 0rem;
 `;
@@ -162,19 +166,25 @@ const Button = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 20px;
+  background: transparent;
+  cursor: pointer;
+  border: 2px solid rgb(65, 65, 65);
+  padding: 0.5rem;
+  transition: all 0.3s ease;
 
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    border: 2px solid rgb(65, 65, 65);
-    padding: 0.5rem;
-    transition: all 0.3s ease;
-
-    &:hover {
-      background: rgb(65, 65, 65);
-      color: white;
-    }
-
+  &:hover {
+    background: rgb(65, 65, 65);
+    color: white;
+  }
+`;
+const CoverArt = styled.div`
+  width: 39vw;
+  padding: 0px 20px;
+  img {
+    box-shadow: 0px 0px 10px 4px #e0e0e0;
+    border: 1px solid #daf1ff;
+    
+  }
 `;
 
 export default ReleaseDetail;
