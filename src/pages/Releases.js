@@ -1,50 +1,69 @@
-import React, {useEffect} from "react";
+import React from "react";
 import ReleaseDetail from "../components/ReleaseDetail";
 //redux
-import {useDispatch, useSelector} from "react-redux";
+import {useSelector} from "react-redux";
 import {useLocation} from "react-router-dom";
-import {loadReleases} from "../actions/releasesActions";
 
 //Components
 import Release from "../components/Release";
-
+import imageLoading from "../img/loading.jpeg";
 //styling
 import styled from "styled-components";
 import {motion, AnimatePresence, AnimateSharedLayout} from "framer-motion";
 
-function Home(props) {
+function ReleasesSmall({loading}) {
   const location = useLocation();
   const pathId = location.pathname.split("/")[2];
 
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(loadReleases());
-  }, [dispatch]);
-
   const releaseInfo = useSelector((state) => state.releases.all);
-const reg = new RegExp("File")
+  const labelInfo = useSelector((state) => state.releases.label);
+  const ordered = releaseInfo.sort((a, b) => b.year - a.year);
+
   return (
     <ReleasesList>
       <AnimateSharedLayout type="crossfade">
         <AnimatePresence>
           {pathId && <ReleaseDetail pathId={pathId} />}
         </AnimatePresence>
-        <h2>Denovali</h2>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          {loading ? (
+            <>
+              <LoadingImage src={imageLoading} alt="loading" />
+              <p>Loading</p>
+            </>
+          ) : (
+            <img
+              src={labelInfo.images[0].resource_url}
+              style={{paddingBottom: "50px", width: "20vw"}}
+              alt={labelInfo.name}
+            />
+          )}
+          {/* <img src={labelInfo.images[0].resource_url}style={{paddingBottom: "50px", width: "20vw"}} alt={labelInfo.name}/> */}
+          <h4 style={{paddingBottom: "50px"}}>{labelInfo.profile}</h4>
+        </div>
         <IndividualRelease>
           {/* eslint-disable-next-line */}
-          {releaseInfo.map((release) => {
-            if (!reg.test(release.format))
-              return (
-                <Release
-                  name={release.title}
-                  format={release.format}
-                  artist={release.artist}
-                  released={release.year}
-                  id={release.id}
-                  image={release.thumb}
-                  key={release.id}
-                />
-              );
+          {ordered.map((release) => {
+            return (
+              <Release
+                name={release.title}
+                format={release.format}
+                released={release.year}
+                artist={release.artist}
+                id={release.id}
+                master={release.resource_url}
+                image={release.thumb}
+                key={release.id}
+                catno={release.catno}
+                loading={loading}
+              />
+            );
           })}
         </IndividualRelease>
       </AnimateSharedLayout>
@@ -62,7 +81,13 @@ const ReleasesList = styled(motion.div)`
 const IndividualRelease = styled(motion.div)`
   min-height: 80vh;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   gap: 1rem;
 `;
-export default Home;
+
+const LoadingImage = styled.img`
+  width: 13vw;
+  height: 20vh;
+  transform: rotate(360deg);
+`;
+export default ReleasesSmall;

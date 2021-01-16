@@ -131,7 +131,6 @@ const Stats = styled(motion.div)`
     font-weight: lighter;
   }
   display: flex;
-
   justify-content: space-between;
 `;
 const Info = styled(motion.div)`
@@ -171,7 +170,6 @@ const Button = styled.div`
   border: 2px solid rgb(65, 65, 65);
   padding: 0.5rem;
   transition: all 0.3s ease;
-
   &:hover {
     background: rgb(65, 65, 65);
     color: white;
@@ -183,8 +181,22 @@ const CoverArt = styled.div`
   img {
     box-shadow: 0px 0px 10px 4px #e0e0e0;
     border: 1px solid #daf1ff;
-    
   }
 `;
 
 export default ReleaseDetail;
+
+
+             /* {detail.videos &&
+                detail.videos.map(async (video) => {
+                  var thumb = YoutubeThumb.thumb(video.uri, 'small');
+                  const res = await axios.get(thumb, {responseType: "arraybuffer"})
+                  const thumbData = res.data;
+                  // const brokenThumbData = PNG.sync.read(fs.readFileSync('../img/brokenYoutubeURL.png'));
+                  // console.log(brokenThumbData);
+return(
+                  <>
+                    <h3>{video.title}</h3>
+                    <ReactPlayer url={video.uri} />
+                  </>)
+                })} */

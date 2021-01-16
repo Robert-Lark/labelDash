@@ -8,7 +8,7 @@ import kirecordsLogo from "../img/kirecordsLogo.jpg";
 import miasmah_logo from "../img/miasmah_logo.jpg";
 import SONICPIECES_LOGO from "../img/SONICPIECES_LOGO.jpg";
 import imageLoading from "../img/loading.jpeg";
-import ReleasesSmall from "./ReleasesSmall";
+import Releases from "./Releases";
 import {useSelector} from "react-redux";
 
 function Dashboard() {
@@ -66,7 +66,7 @@ function Dashboard() {
           </InstructionContainer>
         ) : (
           <ReleasesContainer>
-            <ReleasesSmall />
+            <Releases loading={loading}/>
           </ReleasesContainer>
         )}
         {loading ? (

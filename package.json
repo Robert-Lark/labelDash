@@ -8,6 +8,8 @@
     "@testing-library/user-event": "^12.6.0",
     "axios": "^0.21.1",
     "framer-motion": "^3.1.4",
+    "pixelmatch": "^5.2.1",
+    "pngjs": "^6.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-player": "^2.7.2",
