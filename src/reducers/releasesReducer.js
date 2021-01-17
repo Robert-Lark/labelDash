@@ -6,6 +6,7 @@ const initState = {
   preorders: [],
   search: [],
   loading: false
+
 };
 
 const releasesReducer = (state = initState, action) => {

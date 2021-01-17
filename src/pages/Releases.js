@@ -7,6 +7,7 @@ import {useLocation} from "react-router-dom";
 //Components
 import Release from "../components/Release";
 import imageLoading from "../img/loading.jpeg";
+import Search from '../components/Search'
 //styling
 import styled from "styled-components";
 import {motion, AnimatePresence, AnimateSharedLayout} from "framer-motion";
@@ -14,7 +15,6 @@ import {motion, AnimatePresence, AnimateSharedLayout} from "framer-motion";
 function ReleasesSmall({loading}) {
   const location = useLocation();
   const pathId = location.pathname.split("/")[2];
-
   const releaseInfo = useSelector((state) => state.releases.all);
   const labelInfo = useSelector((state) => state.releases.label);
   const ordered = releaseInfo.sort((a, b) => b.year - a.year);
@@ -46,6 +46,7 @@ function ReleasesSmall({loading}) {
           )}
           {/* <img src={labelInfo.images[0].resource_url}style={{paddingBottom: "50px", width: "20vw"}} alt={labelInfo.name}/> */}
           <h4 style={{paddingBottom: "50px"}}>{labelInfo.profile}</h4>
+          <Search loading={loading}/>
         </div>
         <IndividualRelease>
           {/* eslint-disable-next-line */}
@@ -61,7 +62,6 @@ function ReleasesSmall({loading}) {
                 image={release.thumb}
                 key={release.id}
                 catno={release.catno}
-                loading={loading}
               />
             );
           })}

@@ -8,7 +8,7 @@ import {Link} from "react-router-dom";
 import imageLoading from "../img/loading.jpeg";
 function Release({name, image, id, artist, format}) {
   const detailsLoading = useSelector((state) => state.detail.detailsLoading);
-  console.log(detailsLoading)
+
   const stringPathId = id.toString();
   const dispatch = useDispatch();
   const loadDetailHandler = () => {

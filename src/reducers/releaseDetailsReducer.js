@@ -1,7 +1,7 @@
 const initialState = {
     detail: {},
     format: {},
-    isLoading: true
+    isLoading: true,
   };
   
   const releaseDetailReducer = (state = initialState, action) => {

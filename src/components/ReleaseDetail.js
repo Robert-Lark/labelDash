@@ -30,7 +30,8 @@ function ReleaseDetail({pathId}) {
               <div>
                 <h1>{detail.artists_sort}</h1>
                 <h3>{detail.title}</h3>
-                {detail.labels.map((label) => (
+                {detail.labels &&
+                detail.labels.map((label) => (
                   <h3>{label.name}</h3>
                 ))}
                 <h5>{detail.released}</h5>
