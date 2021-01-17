@@ -73,13 +73,13 @@ img{
     }
     h3 {
       font-size: 100%;
-      color: green;
+
     }
     h4 {
       font-size: 80%;
     }
     h5 {
-      font-size: 40%;
+      font-size: 70%;
     }
   }
 
@@ -92,7 +92,7 @@ img{
     }
     h3 {
       font-size: 50%;
-      color: blue;
+
     }
     h4 {
       font-size: 40%;

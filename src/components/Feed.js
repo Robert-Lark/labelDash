@@ -1,24 +1,23 @@
 import React from "react";
 import styled from "styled-components";
 import ErasedTapesLogo from "../img/ErasedTapesLogo.png";
+import Trippin from '../img/Tripping_with Nils_Frahm_Nils_Frahm.jpg'
 function Feed(props) {
   return (
     <div>
       <BodyContainer>
-
         <FeedContainer>
-        <h1>FEED</h1>
-          <NewRelease>
+          <h1>FEED</h1>
+          <Soundcloud>
             <div className="title">
               <h4>New Radio show</h4>
               <div className="description">
                 <h5>Our latest Radio Show Mixed By DJ DeepField</h5>
               </div>
             </div>
-            <div className="content">
-              {" "}
+
               <iframe
-              title="titleProp"
+                title="titleProp"
                 width="100%"
                 height="auto"
                 scrolling="no"
@@ -26,9 +25,9 @@ function Feed(props) {
                 allow="autoplay"
                 src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/335497700&color=%23ff5500&auto_play=false&hide_related=true&show_comments=true&show_user=true&show_reposts=false&show_teaser=true`}
               ></iframe>
-            </div>
-          </NewRelease>
-          <NewRadioShow>
+          
+          </Soundcloud>
+          <Youtube>
             <div className="title">
               <h4>New Music Video</h4>
               <div className="description">
@@ -37,9 +36,9 @@ function Feed(props) {
                 </h5>
               </div>
             </div>
-            <div className="content">
+       
               <iframe
-              title="titleProp"
+                title="titleProp"
                 width="auto"
                 height="100%"
                 src="https://www.youtube.com/embed/Qk_Dmv6ccsA"
@@ -47,9 +46,13 @@ function Feed(props) {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen
               ></iframe>
-            </div>
-          </NewRadioShow>
-          <NewInterview>
+       
+          </Youtube>
+
+
+
+
+          <Images>
             <div className="title">
               <h4>New Release</h4>
               <div className="description">
@@ -57,17 +60,28 @@ function Feed(props) {
               </div>
             </div>
             <div className="content">
-              <div className="image">
-                <img src={ErasedTapesLogo} alt="newRelease" />
-              </div>
+
+                <img src={Trippin} alt="newRelease" />
+   
               <div className="releaseInfo">
                 <h5>Nils Frahm</h5>
                 <h5>Tripping With Nils Frahm</h5>
                 <h5>Erased Tapes</h5>
               </div>
             </div>
-          </NewInterview>
-          <NewRelease>
+          </Images>
+
+
+
+
+
+
+
+
+
+
+
+          <Soundcloud>
             <div className="title">
               <h4>New Mix</h4>
               <div className="description">
@@ -77,7 +91,7 @@ function Feed(props) {
             <div className="content">
               {" "}
               <iframe
-              title="titleProp"
+                title="titleProp"
                 width="100%"
                 height="auto"
                 scrolling="no"
@@ -86,7 +100,7 @@ function Feed(props) {
                 src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/956460496&color=%23ff5500&auto_play=false&hide_related=true&show_comments=true&show_user=true&show_reposts=false&show_teaser=true`}
               ></iframe>
             </div>
-          </NewRelease>
+          </Soundcloud>
         </FeedContainer>
       </BodyContainer>
     </div>
@@ -112,11 +126,40 @@ const FeedContainer = styled.div`
   }
   @media (max-width: 1400px) {
     h1 {
+      margin: 20px 0 80px 0;
       padding: 5px;
+      font-size: 3rem;
     }
   }
 `;
-const NewRelease = styled.div`
+const Soundcloud = styled.div`
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 4px #e0e0e0;
+  border: 1px solid #daf1ff;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+.title {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  .description {
+    margin: 0 10px;
+    border-top: 1px solid black;
+  }
+@media (max-width: 1400px) {
+  height: 33vh;
+  .description {
+    margin: 10px 10px;
+    border-top: 1px solid black;
+    overflow: hidden;
+  }
+  iframe{
+    padding: 20px;
+  }
+    }
+`;
+const Youtube = styled.div`
   border-radius: 10px;
   box-shadow: 0px 0px 10px 4px #e0e0e0;
   border: 1px solid #daf1ff;
@@ -124,36 +167,33 @@ const NewRelease = styled.div`
   grid-template-columns: 1fr;
   gap: 1rem;
   .title {
+    font-size: 1.5rem;
     text-align: center;
   }
   .description {
     margin: 0 10px;
     border-top: 1px solid black;
   }
-  .content {
-    height: auto;
-  }
-`;
-const NewRadioShow = styled.div`
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px 4px #e0e0e0;
-  border: 1px solid #daf1ff;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-  .title {
-    text-align: center;
+  @media (max-width: 1400px) {
+  height: 50vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+.title {
+height: 20%;
   }
   .description {
     margin: 0 10px;
     border-top: 1px solid black;
   }
-  .content {
-    text-align: center;
-    height: 80%;
-  }
+iframe{
+  width: 100%;
+  padding: 20px;
+
+}
+    }
 `;
-const NewInterview = styled.div`
+const Images = styled.div`
   border-radius: 10px;
   box-shadow: 0px 0px 10px 4px #e0e0e0;
   border: 1px solid #daf1ff;
@@ -172,9 +212,43 @@ const NewInterview = styled.div`
     align-items: center;
     justify-content: space-around;
     img {
-      width: 70%;
+      width: 60%;
     }
   }
+  @media (max-width: 1400px) {
+  height: 38vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+overflow: hidden;
+.title {
+    font-size: 1.5rem;
+    text-align: center;
+    overflow: hidden;
+  }
+  .description {
+    margin: 0 10px;
+    border-top: 1px solid black;
+  }
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    img{
+      width: 50%;
+    padding: 20px;
+  }
+  .releaseInfo{
+    h5{
+      font-size: 1rem;
+    }
+  }
+  }
+
+    
+  
+  
+    }
 `;
 // const NewMusicVideo = styled.div`
 //   box-shadow: 0px 0px 10px 4px #e0e0e0;
