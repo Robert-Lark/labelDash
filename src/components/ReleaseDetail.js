@@ -54,12 +54,13 @@ function ReleaseDetail({pathId}) {
             </Description>
             <Gallery>
               {detail.videos &&
-                detail.videos.map((video) => (
-                  <>
-                    <h3>{video.title}</h3>
-                    <ReactPlayer url={video.uri} />
-                  </>
-                ))}
+                detail.videos.map((video) => {
+                  return (
+                    <>
+                      <h3>{video.title}</h3>
+                      <ReactPlayer url={video.uri} />
+                    </>)  
+                })}
             </Gallery>
             <div
               style={{
