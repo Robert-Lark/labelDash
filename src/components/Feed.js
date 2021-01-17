@@ -18,6 +18,7 @@ function Feed(props) {
             <div className="content">
               {" "}
               <iframe
+              title="titleProp"
                 width="100%"
                 height="auto"
                 scrolling="no"
@@ -38,6 +39,7 @@ function Feed(props) {
             </div>
             <div className="content">
               <iframe
+              title="titleProp"
                 width="560"
                 height="100%"
                 src="https://www.youtube.com/embed/Qk_Dmv6ccsA"
@@ -56,7 +58,7 @@ function Feed(props) {
             </div>
             <div className="content">
               <div className="image">
-                <img src={ErasedTapesLogo} />
+                <img src={ErasedTapesLogo} alt="newRelease" />
               </div>
               <div className="releaseInfo">
                 <h5>Nils Frahm</h5>
@@ -75,6 +77,7 @@ function Feed(props) {
             <div className="content">
               {" "}
               <iframe
+              title="titleProp"
                 width="100%"
                 height="auto"
                 scrolling="no"
@@ -168,18 +171,18 @@ const NewInterview = styled.div`
     }
   }
 `;
-const NewMusicVideo = styled.div`
-  box-shadow: 0px 0px 10px 4px #e0e0e0;
-  border: 1px solid #daf1ff;
-  width: 100%;
-  display: flex;
-  /* flex-direction: column; */
-  align-items: center;
-  img {
-    border-radius: 20px;
-    max-width: 100%;
-    max-height: 100%;
-    cursor: pointer;
-    padding: 5px;
-  }
-`;
+// const NewMusicVideo = styled.div`
+//   box-shadow: 0px 0px 10px 4px #e0e0e0;
+//   border: 1px solid #daf1ff;
+//   width: 100%;
+//   display: flex;
+//   /* flex-direction: column; */
+//   align-items: center;
+//   img {
+//     border-radius: 20px;
+//     max-width: 100%;
+//     max-height: 100%;
+//     cursor: pointer;
+//     padding: 5px;
+//   }
+// `;
