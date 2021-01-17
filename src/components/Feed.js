@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import ErasedTapesLogo from "../img/ErasedTapesLogo.png";
-import Trippin from '../img/Tripping_with Nils_Frahm_Nils_Frahm.jpg'
+import Trippin from "../img/Tripping_with Nils_Frahm_Nils_Frahm.jpg";
 function Feed(props) {
   return (
     <div>
@@ -16,16 +15,15 @@ function Feed(props) {
               </div>
             </div>
 
-              <iframe
-                title="titleProp"
-                width="100%"
-                height="auto"
-                scrolling="no"
-                frameborder="no"
-                allow="autoplay"
-                src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/335497700&color=%23ff5500&auto_play=false&hide_related=true&show_comments=true&show_user=true&show_reposts=false&show_teaser=true`}
-              ></iframe>
-          
+            <iframe
+              title="titleProp"
+              width="100%"
+              height="auto"
+              scrolling="no"
+              frameborder="no"
+              allow="autoplay"
+              src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/335497700&color=%23ff5500&auto_play=false&hide_related=true&show_comments=true&show_user=true&show_reposts=false&show_teaser=true`}
+            ></iframe>
           </Soundcloud>
           <Youtube>
             <div className="title">
@@ -36,21 +34,17 @@ function Feed(props) {
                 </h5>
               </div>
             </div>
-       
-              <iframe
-                title="titleProp"
-                width="auto"
-                height="100%"
-                src="https://www.youtube.com/embed/Qk_Dmv6ccsA"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
-       
+
+            <iframe
+              title="titleProp"
+              width="auto"
+              height="100%"
+              src="https://www.youtube.com/embed/Qk_Dmv6ccsA"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
           </Youtube>
-
-
-
 
           <Images>
             <div className="title">
@@ -60,9 +54,8 @@ function Feed(props) {
               </div>
             </div>
             <div className="content">
+              <img src={Trippin} alt="newRelease" />
 
-                <img src={Trippin} alt="newRelease" />
-   
               <div className="releaseInfo">
                 <h5>Nils Frahm</h5>
                 <h5>Tripping With Nils Frahm</h5>
@@ -70,16 +63,6 @@ function Feed(props) {
               </div>
             </div>
           </Images>
-
-
-
-
-
-
-
-
-
-
 
           <Soundcloud>
             <div className="title">
@@ -139,7 +122,7 @@ const Soundcloud = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
-.title {
+  .title {
     font-size: 1.5rem;
     text-align: center;
   }
@@ -147,17 +130,17 @@ const Soundcloud = styled.div`
     margin: 0 10px;
     border-top: 1px solid black;
   }
-@media (max-width: 1400px) {
-  height: 33vh;
-  .description {
-    margin: 10px 10px;
-    border-top: 1px solid black;
-    overflow: hidden;
-  }
-  iframe{
-    padding: 20px;
-  }
+  @media (max-width: 1400px) {
+    height: 33vh;
+    .description {
+      margin: 10px 10px;
+      border-top: 1px solid black;
+      overflow: hidden;
     }
+    iframe {
+      padding: 20px;
+    }
+  }
 `;
 const Youtube = styled.div`
   border-radius: 10px;
@@ -175,23 +158,22 @@ const Youtube = styled.div`
     border-top: 1px solid black;
   }
   @media (max-width: 1400px) {
-  height: 50vh;
-display: flex;
-flex-direction: column;
-align-items: center;
-.title {
-height: 20%;
-  }
-  .description {
-    margin: 0 10px;
-    border-top: 1px solid black;
-  }
-iframe{
-  width: 100%;
-  padding: 20px;
-
-}
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .title {
+      height: 20%;
     }
+    .description {
+      margin: 0 10px;
+      border-top: 1px solid black;
+    }
+    iframe {
+      width: 100%;
+      padding: 20px;
+    }
+  }
 `;
 const Images = styled.div`
   border-radius: 10px;
@@ -216,39 +198,35 @@ const Images = styled.div`
     }
   }
   @media (max-width: 1400px) {
-  height: 38vh;
-display: flex;
-flex-direction: column;
-align-items: center;
-overflow: hidden;
-.title {
-    font-size: 1.5rem;
-    text-align: center;
-    overflow: hidden;
-  }
-  .description {
-    margin: 0 10px;
-    border-top: 1px solid black;
-  }
-  .content {
+    height: 38vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-    img{
-      width: 50%;
-    padding: 20px;
-  }
-  .releaseInfo{
-    h5{
-      font-size: 1rem;
+    overflow: hidden;
+    .title {
+      font-size: 1.5rem;
+      text-align: center;
+      overflow: hidden;
+    }
+    .description {
+      margin: 0 10px;
+      border-top: 1px solid black;
+    }
+    .content {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      img {
+        width: 50%;
+        padding: 20px;
+      }
+      .releaseInfo {
+        h5 {
+          font-size: 1rem;
+        }
+      }
     }
   }
-  }
-
-    
-  
-  
-    }
 `;
 // const NewMusicVideo = styled.div`
 //   box-shadow: 0px 0px 10px 4px #e0e0e0;
