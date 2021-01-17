@@ -40,7 +40,7 @@ function Feed(props) {
             <div className="content">
               <iframe
               title="titleProp"
-                width="560"
+                width="auto"
                 height="100%"
                 src="https://www.youtube.com/embed/Qk_Dmv6ccsA"
                 frameborder="0"
