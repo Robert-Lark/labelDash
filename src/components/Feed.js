@@ -1,12 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-
+import ErasedTapesLogo from "../img/ErasedTapesLogo.png";
 function Feed(props) {
   return (
     <div>
       <BodyContainer>
+
         <FeedContainer>
-          <h1>FEED</h1>
+        <h1>FEED</h1>
           <NewRelease>
             <div className="title">
               <h4>New Radio show</h4>
@@ -27,14 +28,62 @@ function Feed(props) {
             </div>
           </NewRelease>
           <NewRadioShow>
-            <h3>Request A Title</h3>
+            <div className="title">
+              <h4>New Music Video</h4>
+              <div className="description">
+                <h5>
+                  The First Music Video From The New Christian Loffler Album
+                </h5>
+              </div>
+            </div>
+            <div className="content">
+              <iframe
+                width="560"
+                height="100%"
+                src="https://www.youtube.com/embed/Qk_Dmv6ccsA"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
           </NewRadioShow>
           <NewInterview>
-            <h3>Reccomendations</h3>
+            <div className="title">
+              <h4>New Release</h4>
+              <div className="description">
+                <h5>A New Release From Nils Frahm Was Announced</h5>
+              </div>
+            </div>
+            <div className="content">
+              <div className="image">
+                <img src={ErasedTapesLogo} />
+              </div>
+              <div className="releaseInfo">
+                <h5>Nils Frahm</h5>
+                <h5>Tripping With Nils Frahm</h5>
+                <h5>Erased Tapes</h5>
+              </div>
+            </div>
           </NewInterview>
-          <NewMusicVideo>
-            <h3>Your Collection</h3>
-          </NewMusicVideo>
+          <NewRelease>
+            <div className="title">
+              <h4>New Mix</h4>
+              <div className="description">
+                <h5>A New Mix From Max Cooper Was Just Uploaded</h5>
+              </div>
+            </div>
+            <div className="content">
+              {" "}
+              <iframe
+                width="100%"
+                height="auto"
+                scrolling="no"
+                frameborder="no"
+                allow="autoplay"
+                src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/956460496&color=%23ff5500&auto_play=false&hide_related=true&show_comments=true&show_user=true&show_reposts=false&show_teaser=true`}
+              ></iframe>
+            </div>
+          </NewRelease>
         </FeedContainer>
       </BodyContainer>
     </div>
@@ -55,49 +104,68 @@ const FeedContainer = styled.div`
   display: grid;
   gap: 10px;
   h1 {
-    height: 50%;
+    height: 100%;
     text-align: center;
   }
 `;
 const NewRelease = styled.div`
-border-radius: 10px;
+  border-radius: 10px;
   box-shadow: 0px 0px 10px 4px #e0e0e0;
   border: 1px solid #daf1ff;
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
-  .title{
-      text-align: center;
+  .title {
+    text-align: center;
   }
-  .description{
-      margin: 0 10px; 
-      border-top: 1px solid black;
-      margin-bottom: -20px;
+  .description {
+    margin: 0 10px;
+    border-top: 1px solid black;
   }
-  .content{
-      height: 80%;
+  .content {
+    height: auto;
   }
 `;
 const NewRadioShow = styled.div`
+  border-radius: 10px;
   box-shadow: 0px 0px 10px 4px #e0e0e0;
   border: 1px solid #daf1ff;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-columns: 1fr;
   gap: 1rem;
+  .title {
+    text-align: center;
+  }
+  .description {
+    margin: 0 10px;
+    border-top: 1px solid black;
+  }
+  .content {
+    text-align: center;
+    height: 80%;
+  }
 `;
 const NewInterview = styled.div`
+  border-radius: 10px;
   box-shadow: 0px 0px 10px 4px #e0e0e0;
   border: 1px solid #daf1ff;
-  width: 100%;
-  display: flex;
-  /* flex-direction: column; */
-  align-items: center;
-  img {
-    border-radius: 20px;
-    max-width: 100%;
-    max-height: 100%;
-    cursor: pointer;
-    padding: 5px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  .title {
+    text-align: center;
+  }
+  .description {
+    margin: 0 10px;
+    border-top: 1px solid black;
+  }
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    img {
+      width: 70%;
+    }
   }
 `;
 const NewMusicVideo = styled.div`

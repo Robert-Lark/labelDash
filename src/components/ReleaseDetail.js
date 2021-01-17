@@ -3,7 +3,6 @@ import styled from "styled-components";
 import {motion} from "framer-motion";
 import {useSelector} from "react-redux";
 import {useHistory} from "react-router-dom";
-// import {formatDetailsURL} from "../APIs/discogs";
 import ReactPlayer from "react-player/youtube";
 
 function ReleaseDetail({pathId}) {
@@ -138,14 +137,6 @@ const Tracklist = styled(motion.div)`
     margin-left: 3rem;
   }
 `;
-// const Media = styled(motion.div)`
-//   margin-top: 5rem;
-//   img {
-//     width: 100%;
-//     height: 60vh;
-//     object-fit: cover;
-//   }
-// `;
 const Description = styled(motion.div)`
   margin: 5rem 0rem;
 `;
