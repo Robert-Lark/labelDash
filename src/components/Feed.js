@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Drastic from "../img/drasticSteps.png";
 import Trippin from "../img/Tripping_with Nils_Frahm_Nils_Frahm.jpg";
 function Feed(props) {
   return (
@@ -14,7 +15,6 @@ function Feed(props) {
                 <h5>Our latest Radio Show Mixed By DJ DeepField</h5>
               </div>
             </div>
-
             <iframe
               title="titleProp"
               width="100%"
@@ -54,8 +54,9 @@ function Feed(props) {
               </div>
             </div>
             <div className="content">
-              <img src={Trippin} alt="newRelease" />
-
+              <div className="image">
+                <img src={Trippin} alt="newRelease" />
+              </div>
               <div className="releaseInfo">
                 <h5>Nils Frahm</h5>
                 <h5>Tripping With Nils Frahm</h5>
@@ -84,6 +85,28 @@ function Feed(props) {
               ></iframe>
             </div>
           </Soundcloud>
+          <Images>
+            <div className="title">
+              <h4>New Release</h4>
+              <div className="description">
+                <h5>A New Release From Nils Frahm Was Announced</h5>
+              </div>
+            </div>
+            <div className="content">
+              <div className="image">
+                <img src={Drastic} alt="newRelease" />
+              </div>
+              <div className="releaseInfo">
+                <h5>
+                  We are thrilled to host Syracuse NY based sound-sculptor
+                  Drastic Steps for the tenth edition of our Quiet Cast series.
+                  We have had the privilege of working with this artist for a
+                  few years now & can say without a doubt his ear is tuned to
+                  the right frequencies.{" "}
+                </h5>
+              </div>
+            </div>
+          </Images>
         </FeedContainer>
       </BodyContainer>
     </div>
@@ -213,12 +236,16 @@ const Images = styled.div`
       border-top: 1px solid black;
     }
     .content {
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      img {
-        width: 50%;
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      .image {
+        width: 100%;
         padding: 20px;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
       }
       .releaseInfo {
         h5 {
