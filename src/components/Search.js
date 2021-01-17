@@ -84,7 +84,6 @@ const StyledSearch = styled(motion.nav)`
   }
 `;
 const SearchResults = styled(motion.div)`
-  border: 4px solid red;
   padding: 40px;
 `;
 

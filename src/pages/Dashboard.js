@@ -10,6 +10,7 @@ import SONICPIECES_LOGO from "../img/SONICPIECES_LOGO.jpg";
 import imageLoading from "../img/loading.jpeg";
 import Releases from "./Releases";
 import {useSelector} from "react-redux";
+import Feed from '../components/Feed'
 
 function Dashboard() {
   const {all, loading} = useSelector((state) => state.releases);
@@ -24,6 +25,15 @@ function Dashboard() {
       </Nav>
       <BodyContainer>
         <ButtonContainer>
+        <Button>
+            <h3>Your Collection</h3>
+          </Button>
+          <Button>
+            <h3>Request A Title</h3>
+          </Button>
+          <Button>
+            <h3>Reccomendations</h3>
+          </Button>
           <Button>
             <img
               src={denovaliLogo}
@@ -62,7 +72,7 @@ function Dashboard() {
         </ButtonContainer>
         {all === 0 ? (
           <InstructionContainer style={ loading ? { display:'none'} : {display : 'auto'} }  >
-            <h2>Select a label to explore its Releases</h2>
+            <Feed/>
           </InstructionContainer>
         ) : (
           <ReleasesContainer>
@@ -105,16 +115,18 @@ const ButtonContainer = styled.div`
 `;
 
 const Button = styled.div`
+  box-shadow: 0px 0px 10px 4px #e0e0e0;
+  border: 1px solid #daf1ff;
+width: 30vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   img {
-    border-radius: 50px;
+    border-radius: 20px;
     max-width: 100%;
     max-height: 100%;
-    box-shadow: 0px 0px 10px 4px #e0e0e0;
-    border: 1px solid #daf1ff;
     cursor: pointer;
+    padding: 5px;
   }
 `;
 const ReleasesContainer = styled.div`

@@ -9,10 +9,6 @@ import ReactPlayer from "react-player/youtube";
 function ReleaseDetail({pathId}) {
   const history = useHistory();
   const {detail, isLoading} = useSelector((state) => state.detail);
-  const masterInfo = useSelector((state) => state.detail.format);
-
-  console.log(detail, masterInfo);
-
   const exitDetailHandler = (e) => {
     const element = e.target;
     if (element.classList.contains("shadow")) {
@@ -20,7 +16,6 @@ function ReleaseDetail({pathId}) {
       history.push("/");
     }
   };
-
   return (
     <>
       {!isLoading && (
@@ -31,9 +26,7 @@ function ReleaseDetail({pathId}) {
                 <h1>{detail.artists_sort}</h1>
                 <h3>{detail.title}</h3>
                 {detail.labels &&
-                detail.labels.map((label) => (
-                  <h3>{label.name}</h3>
-                ))}
+                  detail.labels.map((label) => <h3>{label.name}</h3>)}
                 <h5>{detail.released}</h5>
                 {detail.styles.map((genre) => (
                   <h5>{genre}</h5>
@@ -43,7 +36,7 @@ function ReleaseDetail({pathId}) {
                 <Button>CD</Button>
               </div>
               <CoverArt>
-                <img src={detail.images[0].resource_url} alt="cover"/>
+                <img src={detail.images[0].resource_url} alt="cover" />
               </CoverArt>
               <Info>
                 <h3>Tracklist</h3>
@@ -187,8 +180,7 @@ const CoverArt = styled.div`
 
 export default ReleaseDetail;
 
-
-             /* {detail.videos &&
+/* {detail.videos &&
                 detail.videos.map(async (video) => {
                   var thumb = YoutubeThumb.thumb(video.uri, 'small');
                   const res = await axios.get(thumb, {responseType: "arraybuffer"})
