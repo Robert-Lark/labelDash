@@ -1,7 +1,10 @@
 import React from "react";
 import {useDispatch} from "react-redux";
 import {loadReleases} from "../actions/releasesActions";
+//CSS
 import styled from "styled-components";
+//import {mediaPhone, mediaTabletPortrait, mediaTabletLandscape, mediaLargeDesktop} from '../utils/mediaMixins'
+//IMG
 import denovaliLogo from "../img/denovaliLogo.jpg";
 import ErasedTapesLogo from "../img/ErasedTapesLogo.png";
 import kirecordsLogo from "../img/kirecordsLogo.jpg";
@@ -10,7 +13,7 @@ import SONICPIECES_LOGO from "../img/SONICPIECES_LOGO.jpg";
 import imageLoading from "../img/loading.jpeg";
 import Releases from "./Releases";
 import {useSelector} from "react-redux";
-import Feed from '../components/Feed'
+import Feed from "../components/Feed";
 
 function Dashboard() {
   const {all, loading} = useSelector((state) => state.releases);
@@ -25,7 +28,7 @@ function Dashboard() {
       </Nav>
       <BodyContainer>
         <ButtonContainer>
-        <Button>
+          <Button>
             <h3>Your Collection</h3>
           </Button>
           <Button>
@@ -71,16 +74,20 @@ function Dashboard() {
           </Button>
         </ButtonContainer>
         {all === 0 ? (
-          <InstructionContainer style={ loading ? { display:'none'} : {display : 'auto'} }  >
-            <Feed/>
+          <InstructionContainer
+            style={loading ? {display: "none"} : {display: "auto"}}
+          >
+            <Feed />
           </InstructionContainer>
         ) : (
           <ReleasesContainer>
-            <Releases loading={loading}/>
+            <Releases loading={loading} />
           </ReleasesContainer>
         )}
         {loading ? (
-          <InstructionContainer style={all ? {display: "none"} : {display: "auto"}}>
+          <InstructionContainer
+            style={all ? {display: "none"} : {display: "auto"}}
+          >
             <LoadingImage src={imageLoading} alt="loading" />
             <p>Loading</p>
           </InstructionContainer>
@@ -112,12 +119,17 @@ const ButtonContainer = styled.div`
   padding: 50px;
   display: grid;
   gap: 20px;
+  @media (max-width: 1200px) {
+    height: 100vh;
+    padding-top: 10px;
+    height: 90vh;
+  }
 `;
 
 const Button = styled.div`
   box-shadow: 0px 0px 10px 4px #e0e0e0;
   border: 1px solid #daf1ff;
-width: 30vw;
+  width: 30vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -127,6 +139,11 @@ width: 30vw;
     max-height: 100%;
     cursor: pointer;
     padding: 5px;
+  }
+  @media (max-width: 1200px) {
+    h3 {
+      padding: 5px;
+    }
   }
 `;
 const ReleasesContainer = styled.div`

@@ -73,6 +73,10 @@ const StyledSearch = styled(motion.nav)`
     margin-top: 1rem;
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
     font-weight: bold;
+    @media (max-width: 1200px) {
+      font-size: 1rem;
+      width: 15vw;
+  }
   }
   button {
     font-size: 1.5rem;
@@ -81,10 +85,21 @@ const StyledSearch = styled(motion.nav)`
     cursor: pointer;
     background: #ff7676;
     color: white;
+    @media (max-width: 1200px) {
+      font-size: 1rem;
+      width: 45%;
+  }
+  }
+  @media (max-width: 1200px) {
+    padding: 0 0 10px 0;
   }
 `;
 const SearchResults = styled(motion.div)`
   padding: 40px;
+  @media (max-width: 1200px) {
+    padding: 15px 15px 5px 15px;
+   
+  }
 `;
 
 export default Search;

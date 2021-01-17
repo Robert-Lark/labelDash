@@ -7,7 +7,7 @@ import {useLocation} from "react-router-dom";
 //Components
 import Release from "../components/Release";
 import imageLoading from "../img/loading.jpeg";
-import Search from '../components/Search'
+import Search from "../components/Search";
 //styling
 import styled from "styled-components";
 import {motion, AnimatePresence, AnimateSharedLayout} from "framer-motion";
@@ -40,13 +40,12 @@ function ReleasesSmall({loading}) {
           ) : (
             <img
               src={labelInfo.images[0].resource_url}
-              style={{paddingBottom: "50px", width: "20vw"}}
+              class="labelLogo"
               alt={labelInfo.name}
             />
           )}
-          {/* <img src={labelInfo.images[0].resource_url}style={{paddingBottom: "50px", width: "20vw"}} alt={labelInfo.name}/> */}
-          <h4 style={{paddingBottom: "50px"}}>{labelInfo.profile}</h4>
-          <Search loading={loading}/>
+          <h4>{labelInfo.profile}</h4>
+          <Search loading={loading} />
         </div>
         <IndividualRelease>
           {/* eslint-disable-next-line */}
@@ -77,12 +76,28 @@ const ReleasesList = styled(motion.div)`
   h2 {
     padding: 5rem 0rem;
   }
+  h4 {
+    padding-bottom: "50px";
+  }
+  .labelLogo {
+    padding-bottom: 50px;
+    width: 20vw;
+    @media (max-width: 1200px) {
+      padding-bottom: 30px;
+  }
+  }
+  @media (max-width: 1200px) {
+    padding: 0;
+  }
 `;
 const IndividualRelease = styled(motion.div)`
   min-height: 80vh;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   gap: 1rem;
+  @media (max-width: 1200px) {
+      padding: 15px;
+  }
 `;
 
 const LoadingImage = styled.img`

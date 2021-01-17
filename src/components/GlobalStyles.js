@@ -44,6 +44,82 @@ a{
 img{
     display: block;
 }
+
+@media (min-width: 1800px) {
+    h1 {
+      font-size: 170%;
+    }
+    h2 {
+      font-size: 160%;
+    }
+    h3 {
+      font-size: 150%;
+      color: brown;
+    }
+    h4 {
+      font-size: 140%;
+    }
+    h5 {
+      font-size: 130%;
+    }
+  }
+
+@media (max-width: 1200px) {
+    h1 {
+      font-size: 80%;
+    }
+    h2 {
+      font-size: 70%;
+    }
+    h3 {
+      font-size: 100%;
+      color: green;
+    }
+    h4 {
+      font-size: 80%;
+    }
+    h5 {
+      font-size: 40%;
+    }
+  }
+
+@media (max-width: 900px) {
+    h1 {
+      font-size: 70%;
+    }
+    h2 {
+      font-size: 60%;
+    }
+    h3 {
+      font-size: 50%;
+      color: blue;
+    }
+    h4 {
+      font-size: 40%;
+    }
+    h5 {
+      font-size: 30%;
+    }
+  }
+
+@media (max-width: 600px) {
+    h1 {
+      font-size: 50%;
+    }
+    h2 {
+      font-size: 40%;
+    }
+    h3 {
+      font-size: 30%;
+      color: red;
+    }
+    h4 {
+      font-size: 20%;
+    }
+    h5 {
+      font-size: 10%;
+    }
+  }
 `;
 
 export default GlobalStyles;
