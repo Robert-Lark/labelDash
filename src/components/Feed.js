@@ -16,12 +16,12 @@ function Feed(props) {
               </div>
             </div>
             <iframe
-              title="titleProp"
-              width="100%"
-              height="auto"
-              scrolling="no"
-              frameborder="no"
-              allow="autoplay"
+             title="titleProp"
+             width="100%"
+             height="auto"
+             scrolling="no"
+             frameborder="no"
+             allow="autoplay"
               src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/335497700&color=%23ff5500&auto_play=false&hide_related=true&show_comments=true&show_user=true&show_reposts=false&show_teaser=true`}
             ></iframe>
           </Soundcloud>
@@ -117,6 +117,7 @@ export default Feed;
 
 const BodyContainer = styled.div`
   margin-top: 15%;
+
 `;
 
 const FeedContainer = styled.div`
@@ -132,6 +133,7 @@ const FeedContainer = styled.div`
   }
   @media (max-width: 1400px) {
     h1 {
+      overflow: visible;
       margin: 20px 0 80px 0;
       padding: 5px;
       font-size: 3rem;
@@ -146,26 +148,35 @@ const Soundcloud = styled.div`
   grid-template-columns: 1fr;
   gap: 1rem;
   .title {
+    overflow: visible;
     font-size: 1.5rem;
     text-align: center;
   }
   .description {
+    overflow: visible;
     margin: 0 10px;
     border-top: 1px solid black;
   }
   @media (max-width: 1400px) {
-    height: 33vh;
+    height: 38vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .title {
+      height: 20%;
+    }
     .description {
-      margin: 10px 10px;
+      margin: 0 10px;
       border-top: 1px solid black;
-      overflow: hidden;
     }
     iframe {
+      width: 100%;
       padding: 20px;
     }
   }
 `;
 const Youtube = styled.div`
+  overflow: visible;
   border-radius: 10px;
   box-shadow: 0px 0px 10px 4px #e0e0e0;
   border: 1px solid #daf1ff;
@@ -173,10 +184,12 @@ const Youtube = styled.div`
   grid-template-columns: 1fr;
   gap: 1rem;
   .title {
+    overflow: visible;
     font-size: 1.5rem;
     text-align: center;
   }
   .description {
+    overflow: visible;
     margin: 0 10px;
     border-top: 1px solid black;
   }
@@ -199,6 +212,7 @@ const Youtube = styled.div`
   }
 `;
 const Images = styled.div`
+  overflow: visible;
   border-radius: 10px;
   box-shadow: 0px 0px 10px 4px #e0e0e0;
   border: 1px solid #daf1ff;
@@ -206,17 +220,21 @@ const Images = styled.div`
   grid-template-columns: 1fr;
   gap: 1rem;
   .title {
+    overflow: visible;
     text-align: center;
   }
   .description {
+    overflow: visible;
     margin: 0 10px;
     border-top: 1px solid black;
   }
   .content {
+    overflow: visible;
     display: flex;
     align-items: center;
     justify-content: space-around;
     img {
+      overflow: visible;
       width: 60%;
     }
   }
@@ -225,11 +243,11 @@ const Images = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow: hidden;
+    overflow: visible;
     .title {
       font-size: 1.5rem;
       text-align: center;
-      overflow: hidden;
+      overflow: visible;
     }
     .description {
       margin: 0 10px;
@@ -238,6 +256,7 @@ const Images = styled.div`
     .content {
       display: grid;
       grid-template-columns: 300px 1fr;
+      overflow: hidden;
       .image {
         width: 100%;
         padding: 20px;
