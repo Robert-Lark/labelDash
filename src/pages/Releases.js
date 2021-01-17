@@ -82,11 +82,11 @@ const ReleasesList = styled(motion.div)`
   .labelLogo {
     padding-bottom: 50px;
     width: 20vw;
-    @media (max-width: 1200px) {
+    @media (max-width: 1400px) {
       padding-bottom: 30px;
   }
   }
-  @media (max-width: 1200px) {
+  @media (max-width: 1400px) {
     padding: 0;
   }
 `;
@@ -95,7 +95,7 @@ const IndividualRelease = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   gap: 1rem;
-  @media (max-width: 1200px) {
+  @media (max-width: 1400px) {
       padding: 15px;
   }
 `;

@@ -110,6 +110,11 @@ const FeedContainer = styled.div`
     height: 100%;
     text-align: center;
   }
+  @media (max-width: 1400px) {
+    h1 {
+      padding: 5px;
+    }
+  }
 `;
 const NewRelease = styled.div`
   border-radius: 10px;

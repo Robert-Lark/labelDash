@@ -119,7 +119,7 @@ const ButtonContainer = styled.div`
   padding: 50px;
   display: grid;
   gap: 20px;
-  @media (max-width: 1200px) {
+  @media (max-width: 1400px) {
     height: 100vh;
     padding-top: 10px;
     height: 90vh;
@@ -140,7 +140,7 @@ const Button = styled.div`
     cursor: pointer;
     padding: 5px;
   }
-  @media (max-width: 1200px) {
+  @media (max-width: 1400px) {
     h3 {
       padding: 5px;
     }

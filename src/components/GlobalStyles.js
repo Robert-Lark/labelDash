@@ -64,9 +64,9 @@ img{
     }
   }
 
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
     h1 {
-      font-size: 80%;
+      font-size: 100%;
     }
     h2 {
       font-size: 70%;
