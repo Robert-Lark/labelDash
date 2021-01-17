@@ -42,7 +42,7 @@ function Feed(props) {
               src="https://www.youtube.com/embed/Qk_Dmv6ccsA"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
+              allowfullscreen= "true"
             ></iframe>
           </Youtube>
 
@@ -134,18 +134,19 @@ const FeedContainer = styled.div`
   @media (max-width: 1400px) {
     h1 {
       overflow: visible;
-      margin: 20px 0 80px 0;
+      margin: 20px 0;
       padding: 5px;
       font-size: 3rem;
     }
   }
 `;
 const Soundcloud = styled.div`
+  overflow: visible;
   border-radius: 10px;
   box-shadow: 0px 0px 10px 4px #e0e0e0;
   border: 1px solid #daf1ff;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns:1fr;
   gap: 1rem;
   .title {
     overflow: visible;
@@ -158,7 +159,7 @@ const Soundcloud = styled.div`
     border-top: 1px solid black;
   }
   @media (max-width: 1400px) {
-    height: 38vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -172,6 +173,7 @@ const Soundcloud = styled.div`
     iframe {
       width: 100%;
       padding: 20px;
+      overflow: hidden;
     }
   }
 `;
@@ -194,7 +196,7 @@ const Youtube = styled.div`
     border-top: 1px solid black;
   }
   @media (max-width: 1400px) {
-    height: 50vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -239,7 +241,7 @@ const Images = styled.div`
     }
   }
   @media (max-width: 1400px) {
-    height: 38vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
