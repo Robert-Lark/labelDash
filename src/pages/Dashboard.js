@@ -160,6 +160,13 @@ const Button = styled.div`
     cursor: pointer;
     padding: 5px;
   }
+  @media (min-width: 1400px) {
+
+    h3{
+
+      overflow: hidden;
+    }
+  }
   @media (max-width: 1400px) {
     h3 {
       padding: 5px;

@@ -57,11 +57,10 @@ function Feed(props) {
             <div className="image">
               <img src={Trippin} alt="newRelease" />
             </div>
-
           </div>
         </Images>
-         <Soundcloud>
-         <div className="title">
+        <Soundcloud>
+          <div className="title">
             <h4>New Mix</h4>
             <div className="description">
               <h5>A New Mix From Max Cooper Was Just Uploaded</h5>
@@ -81,7 +80,7 @@ function Feed(props) {
           <div className="title">
             <h4>New Release</h4>
             <div className="description">
-              <h5>A New Interview With Drastic Steps Was Published</h5>
+              <h5>A New Interview With Drastic Steps Was Just Published</h5>
             </div>
           </div>
           <div className="content">
@@ -110,9 +109,9 @@ const FeedContainer = styled.div`
   gap: 10px;
   @media (max-width: 600px) {
     margin-top: 0px;
-    }
-    @media (orientation: landscape) and (max-width: 900px) {
-      margin-top: 0px;
+  }
+  @media (orientation: landscape) and (max-width: 900px) {
+    margin-top: 0px;
   }
   h1 {
     height: 100%;
@@ -122,9 +121,9 @@ const FeedContainer = styled.div`
       display: flex;
       flex-direction: column;
       align-items: center;
-      }
+    }
   }
-  
+
   div {
     @media (max-width: 600px) {
       width: 90%;
@@ -134,7 +133,7 @@ const FeedContainer = styled.div`
       display: flex;
       flex-direction: column;
       align-items: center;
-      }
+    }
   }
   @media (max-width: 1400px) {
     h1 {
@@ -169,6 +168,11 @@ const Soundcloud = styled.div`
     margin: 0 10px;
     border-top: 1px solid black;
   }
+  @media (min-width: 1400px) {
+  iframe{
+    padding: 5px;
+  }
+  }
   @media (max-width: 1400px) {
     height: 100%;
     display: flex;
@@ -188,14 +192,14 @@ const Soundcloud = styled.div`
     }
   }
   @media (max-width: 600px) {
-  h4 {
-padding: 20px;
-  }
-  h5{
-    padding: 10px 0;
-  }
-  iframe {
- margin: 30px 0 -25px 0;
+    h4 {
+      padding: 20px;
+    }
+    h5 {
+      padding: 10px 0;
+    }
+    iframe {
+      margin: 30px 0 -25px 0;
     }
   }
   @media (max-width: 400px) {
@@ -204,7 +208,7 @@ padding: 20px;
       padding: 5px;
       overflow: hidden;
     }
-      }
+  }
 `;
 const Youtube = styled.div`
   overflow: visible;
@@ -224,7 +228,25 @@ const Youtube = styled.div`
     margin: 0 10px;
     border-top: 1px solid black;
   }
-  
+  @media (min-width: 1400px) {
+    display: grid;
+    grid-template-rows: 5vh 5vh 50vh;
+    gap: 1rem;
+    .title {
+      padding: 4px;
+      margin-bottom: 50px;
+      grid-row: 1 / span 1;
+    }
+    .description {
+      grid-row: 2 / span 1;
+    }
+    iframe {
+      padding: 5px;
+      border-radius: 15px;
+      grid-row: 3 / span 1;
+      width: 100%;
+    }
+  }
 
   @media (max-width: 1400px) {
     height: 100%;
@@ -244,14 +266,14 @@ const Youtube = styled.div`
     }
   }
   @media (max-width: 600px) {
-  h4 {
-padding: 20px;
-  }
-  h5{
-    padding: 10px 0;
-  }
-  iframe {
- margin: 30px 0 0 0;
+    h4 {
+      padding: 20px;
+    }
+    h5 {
+      padding: 10px 0;
+    }
+    iframe {
+      margin: 30px 0 0 0;
     }
   }
 `;
@@ -277,12 +299,36 @@ const Images = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-around;
+  }
+  img {
+    overflow: visible;
+    width: 60%;
+  }
+  @media (min-width: 1400px) {
+    display: grid;
+    grid-template-rows: 15% 15% 50%;
+    gap: 0rem;
+    .title {
+      padding: 4px;
+      margin-bottom: 50px;
+      grid-row: 1 / span 1;
     }
-    img {
-      overflow: visible;
-      width: 60%;
+    .description {
+      grid-row: 2 / span 1;
     }
-  
+    .content {
+      padding: 5px;
+      border-radius: 15px;
+      grid-row: 3 / span 1;
+      width: 100%;
+    }
+    .image{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }
   @media (max-width: 1400px) {
     height: 100%;
     display: flex;
@@ -315,20 +361,19 @@ const Images = styled.div`
   }
   @media (max-width: 600px) {
     height: auto;
-  h4 {
-padding: 20px;
-  }
-  h5{
-    padding: 10px 0;
-  }
-  .content{
-    height: 70%;
-  }
-  .image {
-width: auto;
-height: auto;
+    h4 {
+      padding: 20px;
     }
-
+    h5 {
+      padding: 10px 0;
+    }
+    .content {
+      height: 70%;
+    }
+    .image {
+      width: auto;
+      height: auto;
+    }
   }
 `;
 // const NewMusicVideo = styled.div`

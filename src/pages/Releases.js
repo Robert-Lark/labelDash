@@ -84,13 +84,12 @@ const ReleasesList = styled(motion.div)`
     width: 20vw;
     @media (max-width: 1400px) {
       padding-bottom: 30px;
-  }
+    }
   }
   @media (max-width: 1400px) {
     padding: 0;
   }
   @media (max-width: 600px) {
-
     width: 60vw;
   }
 `;
@@ -99,8 +98,13 @@ const IndividualRelease = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   gap: 1rem;
+  @media (min-width: 1400px) {
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 1rem;
+  }
+  
   @media (max-width: 1400px) {
-      padding: 15px;
+    padding: 15px;
   }
 `;
 

@@ -45,42 +45,27 @@ img{
     display: block;
 }
 
-@media (min-width: 1800px) {
+@media (min-width: 1400px) {
     h1 {
-      font-size: 170%;
+      font-size: 100%;
     }
     h2 {
-      font-size: 160%;
+      font-size: 100%;
     }
     h3 {
-      font-size: 150%;
-      color: brown;
+      font-size: 100%;
+
     }
     h4 {
-      font-size: 140%;
+      font-size: 100%;
     }
     h5 {
-      font-size: 130%;
+      font-size: 100%;
     }
   }
 
 @media (max-width: 1400px) {
-    h1 {
-      font-size: 100%;
-    }
-    h2 {
-      font-size: 70%;
-    }
-    h3 {
-      font-size: 100%;
 
-    }
-    h4 {
-      font-size: 80%;
-    }
-    h5 {
-      font-size: 70%;
-    }
   }
 
 @media (max-width: 900px) {
@@ -120,6 +105,5 @@ img{
     }
   }
 `;
-
 
 export default GlobalStyles;
