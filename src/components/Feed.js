@@ -4,7 +4,7 @@ import Drastic from "../img/drasticSteps.png";
 import Trippin from "../img/Tripping_with Nils_Frahm_Nils_Frahm.jpg";
 function Feed(props) {
   return (
-    <div>
+
       <BodyContainer>
         <FeedContainer>
           <h1>FEED</h1>
@@ -109,22 +109,22 @@ function Feed(props) {
           </Images>
         </FeedContainer>
       </BodyContainer>
-    </div>
+
   );
 }
 
 export default Feed;
 
 const BodyContainer = styled.div`
-  margin-top: 15%;
-
+  height: 90vh;
 `;
 
 const FeedContainer = styled.div`
   box-shadow: 0px 0px 10px 4px #e0e0e0;
-  height: 95vh;
+  margin-top: 50px;
+  height: 90vh;
   width: 50vw;
-  padding: 30px;
+  padding: 0 30px 30px 30px;
   display: grid;
   gap: 10px;
   h1 {
