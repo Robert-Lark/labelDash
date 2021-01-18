@@ -111,7 +111,6 @@ img{
     }
     h3 {
       font-size: 30%;
-      color: red;
     }
     h4 {
       font-size: 20%;

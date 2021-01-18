@@ -103,6 +103,11 @@ const Nav = styled.nav`
   padding: 20px;
   height: 10vh;
   width: 100vw;
+  @media (max-width: 600px) {
+    height: 5vh;
+    padding-top: 10px;
+  }
+
 `;
 
 const BodyContainer = styled.div`
@@ -120,10 +125,15 @@ const ButtonContainer = styled.div`
   display: grid;
   gap: 20px;
   @media (max-width: 1400px) {
-    height: 100vh;
     padding-top: 10px;
     height: 90vh;
   }
+  @media (max-width: 600px) {
+display: flex;
+flex-direction: column;
+padding: 10px;
+width: 38vw;
+}
 `;
 
 const Button = styled.div`
@@ -157,11 +167,15 @@ const ReleasesContainer = styled.div`
 `;
 
 const InstructionContainer = styled.div`
-  height: 80vh;
+  height: 90vh;
   width: 55vw;
   display: flex;
   flex-direction: row;
   align-items: center;
+
+  @media (max-width: 600px) {
+    width: 75vw;
+}
 `;
 const LoadingImage = styled.img`
   width: 13vw;
