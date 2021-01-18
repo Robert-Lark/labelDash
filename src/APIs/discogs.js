@@ -20,4 +20,4 @@ export const formatDetailsURL = (masterId) =>
 `${base_url}masters/${masterId}?key=${process.env.REACT_APP_DISCOGS_API_KEY}&secret=${process.env.REACT_APP_DISCOGS_API_SECRET}`;
 //SEARCHED TITLE
 
-// export const searchTitle = (Title) => `${base_url}database/search?q=${artist}`
+export const searchTitle = (input) => `${base_url}database/search?q=${input}`

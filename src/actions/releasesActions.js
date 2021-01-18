@@ -25,24 +25,19 @@ export const loadReleases = (id) => async (dispatch) => {
   //if it is, skip this record, else, add it to the dictionary
   // eslint-disable-next-line
   releasesData.map((release) => {
-    if (!release.format.includes("File" || "TP" || "W/Lbl" || "Promo") && release.thumb) {
+    if (!release.format.includes("File") && release.thumb) {
       if (!releasesByTitle[release.title]) {
         releasesByTitle[release.title] = release;
-      } else if (releasesByTitle[release.title]) {
+      } else {
         if (releasesByTitle[release.title].format.includes("W/Lbl")) {
           releasesByTitle[release.title] = release;
         }
-      } 
-      else if (releasesByTitle[release.title]) {
-        if (releasesByTitle[release.title].format.includes("TP")) {
-          releasesByTitle[release.title] = release;
-        }
-      } else if (releasesByTitle[release.title]) {
         if (releasesByTitle[release.title].format.includes("Promo")) {
           releasesByTitle[release.title] = release;
         }
-      }
-      else if (releasesByTitle[release.title]) {
+        if (releasesByTitle[release.title].format.includes("TP")) {
+          releasesByTitle[release.title] = release;
+        }
         if (releasesByTitle[release.title].format.includes("Pap")) {
           releasesByTitle[release.title] = release;
         }

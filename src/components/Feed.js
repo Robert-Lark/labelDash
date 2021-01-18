@@ -61,6 +61,7 @@ function Feed(props) {
                 <h5>Nils Frahm</h5>
                 <h5>Tripping With Nils Frahm</h5>
                 <h5>Erased Tapes</h5>
+                <h5>01-18-2021</h5>
               </div>
             </div>
           </Images>
@@ -73,7 +74,6 @@ function Feed(props) {
               </div>
             </div>
             <div className="content">
-              {" "}
               <iframe
                 title="titleProp"
                 width="100%"

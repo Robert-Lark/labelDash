@@ -22,7 +22,7 @@ const Search = () => {
         <button>Search</button>
         {searchInput &&
           releaseInfo.map((release) => {
-            if (release.title.includes(searchInput)) {
+            if (release.title.toLowerCase().includes(searchInput.toLowerCase())) {
               return (
                 <SearchResults>
                   <Release
@@ -38,7 +38,7 @@ const Search = () => {
                   />
                 </SearchResults>
               );
-            } if (release.artist.includes(searchInput)) {
+            } if (release.artist.toLowerCase().includes(searchInput.toLowerCase())) {
                 return (
                   <SearchResults>
                     <Release

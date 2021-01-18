@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useRef} from "react";
 import styled from "styled-components";
 import {motion} from "framer-motion";
 import {useSelector} from "react-redux";
@@ -6,6 +6,8 @@ import {useHistory} from "react-router-dom";
 import ReactPlayer from "react-player/youtube";
 
 function ReleaseDetail({pathId}) {
+const reference = useRef()
+
   const history = useHistory();
   const {detail, isLoading} = useSelector((state) => state.detail);
   const exitDetailHandler = (e) => {
@@ -18,7 +20,7 @@ function ReleaseDetail({pathId}) {
   return (
     <>
       {!isLoading && (
-        <CardShadow className="shadow" onClick={exitDetailHandler}>
+        <CardShadow ref={reference} className="shadow" onClick={exitDetailHandler}>
           <Detail layoutId={pathId}>
             <Stats>
               <div>
@@ -69,7 +71,7 @@ function ReleaseDetail({pathId}) {
             >
               <Button
                 onClick={() => {
-                  window.scroll({
+                  reference.current.scroll({
                     top: 0,
                     left: 0,
                     behavior: "smooth",
@@ -146,7 +148,7 @@ const Gallery = styled(motion.div)`
   align-items: center;
 `;
 
-const Button = styled.div`
+const Button = styled.button`
   display: flex;
   justify-content: center;
   margin-top: 20px;
@@ -159,6 +161,7 @@ const Button = styled.div`
     background: rgb(65, 65, 65);
     color: white;
   }
+
 `;
 const CoverArt = styled.div`
   width: 39vw;

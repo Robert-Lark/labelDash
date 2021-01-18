@@ -22,5 +22,3 @@ export const YoutubeThumb = (function () {
     };
 }());
 
-//Example of usage:
-
