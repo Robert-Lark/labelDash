@@ -89,6 +89,10 @@ const ReleasesList = styled(motion.div)`
   @media (max-width: 1400px) {
     padding: 0;
   }
+  @media (max-width: 600px) {
+
+    width: 60vw;
+  }
 `;
 const IndividualRelease = styled(motion.div)`
   min-height: 80vh;

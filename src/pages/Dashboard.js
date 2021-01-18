@@ -107,7 +107,6 @@ const Nav = styled.nav`
     height: 5vh;
     padding-top: 10px;
   }
-
 `;
 
 const BodyContainer = styled.div`
@@ -115,6 +114,10 @@ const BodyContainer = styled.div`
   justify-content: space-between;
   box-shadow: 0px 0px 10px 4px #e0e0e0;
   border: 1px solid #daf1ff;
+  @media (orientation: landscape) and (max-width: 900px) {
+    display: grid;
+    grid-template-columns: 25vw 60vw 1fr;
+  }
 `;
 const ButtonContainer = styled.div`
   box-shadow: 0px 0px 10px 4px #e0e0e0;
@@ -129,11 +132,18 @@ const ButtonContainer = styled.div`
     height: 90vh;
   }
   @media (max-width: 600px) {
-display: flex;
-flex-direction: column;
-padding: 10px;
-width: 38vw;
-}
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 38vw;
+  }
+  @media (orientation: landscape) and (max-width: 900px) {
+    width: 20vw;
+    display: grid;
+    grid-template-rows: repeat(auto-fit, minmax(5vh, 1fr));
+    gap: 5px;
+    padding: 5px;
+  }
 `;
 
 const Button = styled.div`
@@ -155,6 +165,24 @@ const Button = styled.div`
       padding: 5px;
     }
   }
+  @media (orientation: landscape) and (max-width: 900px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18vw;
+
+    h3 {
+      padding-bottom: 20px;
+    }
+    img {
+      border-radius: 20px;
+      max-width: auto;
+      max-height: auto;
+      width: 40%;
+      cursor: pointer;
+      padding: 0px 0;
+    }
+  }
 `;
 const ReleasesContainer = styled.div`
   box-shadow: 0px 0px 10px 4px #e0e0e0;
@@ -164,6 +192,13 @@ const ReleasesContainer = styled.div`
   padding: 50px;
   display: grid;
   gap: 20px;
+  @media (max-width: 600px) {
+    width: 70vw;
+    padding: 10px;
+  }
+  @media (orientation: landscape) and (max-width: 900px) {
+    width: 70vw;
+  }
 `;
 
 const InstructionContainer = styled.div`
@@ -175,7 +210,10 @@ const InstructionContainer = styled.div`
 
   @media (max-width: 600px) {
     width: 75vw;
-}
+  }
+  @media (orientation: landscape) and (max-width: 900px) {
+    width: 70vw;
+  }
 `;
 const LoadingImage = styled.img`
   width: 13vw;

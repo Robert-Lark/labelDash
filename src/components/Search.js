@@ -77,6 +77,14 @@ const StyledSearch = styled(motion.nav)`
       font-size: 1rem;
       width: 15vw;
   }
+  @media (max-width: 600px) {
+    font-size: .5rem;
+    width: 30vw;
+  }
+  @media (orientation: landscape) and (max-width: 900px) {
+    font-size: .5rem;
+    width: 50vw;
+  }
   }
   button {
     font-size: 1.5rem;
@@ -89,10 +97,17 @@ const StyledSearch = styled(motion.nav)`
       font-size: 1rem;
       width: 45%;
   }
+  @media (max-width: 600px) {
+display: none;
+  }
+  @media (orientation: landscape) and (max-width: 900px) {
+    display: none;
+  }
   }
   @media (max-width: 1400px) {
     padding: 0 0 10px 0;
   }
+
 `;
 const SearchResults = styled(motion.div)`
   padding: 40px;

@@ -14,6 +14,7 @@ function Feed(props) {
               <h5>Our latest Radio Show Mixed By DJ DeepField</h5>
             </div>
           </div>
+          {/* //https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/956460496&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true */}
           <iframe
             title="titleProp"
             width="100%"
@@ -21,7 +22,7 @@ function Feed(props) {
             scrolling="no"
             frameborder="no"
             allow="autoplay"
-            src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/335497700&color=%23ff5500&auto_play=false&hide_related=true&show_comments=true&show_user=true&show_reposts=false&show_teaser=true`}
+            src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/929458261&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true`}
           ></iframe>
         </Soundcloud>
         <Youtube>
@@ -64,25 +65,22 @@ function Feed(props) {
             </div>
           </div>
         </Images>
-
-        <Soundcloud>
-          <div className="title">
+         <Soundcloud>
+         <div className="title">
             <h4>New Mix</h4>
             <div className="description">
               <h5>A New Mix From Max Cooper Was Just Uploaded</h5>
             </div>
           </div>
-          <div className="content">
-            <iframe
-              title="titleProp"
-              width="100%"
-              height="auto"
-              scrolling="no"
-              frameborder="no"
-              allow="autoplay"
-              src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/956460496&color=%23ff5500&auto_play=false&hide_related=true&show_comments=true&show_user=true&show_reposts=false&show_teaser=true`}
-            ></iframe>
-          </div>
+          <iframe
+            title="titleProp"
+            width="100%"
+            height="auto"
+            scrolling="no"
+            frameborder="no"
+            allow="autoplay"
+            src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/956460496&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true`}
+          ></iframe>
         </Soundcloud>
         <Images>
           <div className="title">
@@ -121,14 +119,33 @@ const FeedContainer = styled.div`
   padding: 0 30px 30px 30px;
   display: grid;
   gap: 10px;
+  @media (max-width: 600px) {
+    margin-top: 0px;
+    }
+    @media (orientation: landscape) and (max-width: 900px) {
+      margin-top: 0px;
+  }
   h1 {
     height: 100%;
     text-align: center;
+    @media (max-width: 400px) {
+      width: 65%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      }
   }
+  
   div {
     @media (max-width: 600px) {
       width: 90%;
     }
+    @media (max-width: 400px) {
+      width: 65%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      }
   }
   @media (max-width: 1400px) {
     h1 {
@@ -140,6 +157,9 @@ const FeedContainer = styled.div`
   }
   @media (max-width: 600px) {
     width: 63vw;
+  }
+  @media (orientation: landscape) and (max-width: 900px) {
+    width: 70vw;
   }
 `;
 const Soundcloud = styled.div`
@@ -178,6 +198,24 @@ const Soundcloud = styled.div`
       overflow: hidden;
     }
   }
+  @media (max-width: 600px) {
+  h4 {
+padding: 20px;
+  }
+  h5{
+    padding: 10px 0;
+  }
+  iframe {
+ margin: 30px 0 -25px 0;
+    }
+  }
+  @media (max-width: 400px) {
+    iframe {
+      width: 70%;
+      padding: 5px;
+      overflow: hidden;
+    }
+      }
 `;
 const Youtube = styled.div`
   overflow: visible;
@@ -197,6 +235,8 @@ const Youtube = styled.div`
     margin: 0 10px;
     border-top: 1px solid black;
   }
+  
+
   @media (max-width: 1400px) {
     height: 100%;
     display: flex;
@@ -212,6 +252,17 @@ const Youtube = styled.div`
     iframe {
       width: 100%;
       padding: 20px;
+    }
+  }
+  @media (max-width: 600px) {
+  h4 {
+padding: 20px;
+  }
+  h5{
+    padding: 10px 0;
+  }
+  iframe {
+ margin: 30px 0 0 0;
     }
   }
 `;
@@ -280,6 +331,22 @@ const Images = styled.div`
           font-size: 1rem;
         }
       }
+    }
+  }
+  @media (max-width: 600px) {
+    height: auto;
+  h4 {
+padding: 20px;
+  }
+  h5{
+    padding: 10px 0;
+  }
+  .content{
+    height: 70%;
+  }
+  .image {
+width: 70%;
+height: 100%;
     }
   }
 `;
