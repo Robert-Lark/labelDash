@@ -57,12 +57,7 @@ function Feed(props) {
             <div className="image">
               <img src={Trippin} alt="newRelease" />
             </div>
-            <div className="releaseInfo">
-              <h5>Nils Frahm</h5>
-              <h5>Tripping With Nils Frahm</h5>
-              <h5>Erased Tapes</h5>
-              <h5>01-18-2021</h5>
-            </div>
+
           </div>
         </Images>
          <Soundcloud>
@@ -92,12 +87,6 @@ function Feed(props) {
           <div className="content">
             <div className="image">
               <img src={Drastic} alt="newRelease" />
-            </div>
-            <div className="releaseInfo">
-              <h5>Nils Frahm</h5>
-              <h5>Tripping With Nils Frahm</h5>
-              <h5>Erased Tapes</h5>
-              <h5>01-18-2021</h5>
             </div>
           </div>
         </Images>
@@ -288,16 +277,12 @@ const Images = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-around;
-    .releaseInfo {
-      @media (max-width: 600px) {
-        display: none;
-      }
     }
     img {
       overflow: visible;
       width: 60%;
     }
-  }
+  
   @media (max-width: 1400px) {
     height: 100%;
     display: flex;
@@ -326,11 +311,6 @@ const Images = styled.div`
         height: 100%;
         object-fit: contain;
       }
-      .releaseInfo {
-        h5 {
-          font-size: 1rem;
-        }
-      }
     }
   }
   @media (max-width: 600px) {
@@ -345,9 +325,10 @@ padding: 20px;
     height: 70%;
   }
   .image {
-width: 70%;
-height: 100%;
+width: auto;
+height: auto;
     }
+
   }
 `;
 // const NewMusicVideo = styled.div`
