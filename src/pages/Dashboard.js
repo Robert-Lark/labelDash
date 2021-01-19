@@ -24,15 +24,18 @@ function Dashboard() {
   return (
     <Container>
       <Nav>
-        <h1>RECORD STORE</h1>
+        <h1>A Collection Of Sonic Architecture</h1>
       </Nav>
       <BodyContainer>
         <ButtonContainer>
-          <Button>
+          {/* <Button>
             <h3>Your Collection</h3>
           </Button>
           <Button>
             <h3>Request A Title</h3>
+          </Button> */}
+          <Button>
+            <h3>Search</h3>
           </Button>
           <Button>
             <h3>Reccomendations</h3>
