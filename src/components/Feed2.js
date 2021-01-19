@@ -109,6 +109,11 @@ const FeedContainer = styled.div`
     grid-template-columns: 55vw;
     grid-template-rows: 5vh 1fr;
   }
+  @media (max-width: 400px) {
+    grid-template-columns: 50vw;
+    grid-template-rows: 5vh 1fr;
+    margin-bottom: 70px;
+  }
   h1 {
     font-size: 4rem;
     @media (max-width: 1400px) {
@@ -138,6 +143,9 @@ const FeedContainer = styled.div`
   }
   .headline {
     height: 15vh;
+    @media (max-width: 600px) {
+      height: 20vh;
+    }
   }
 `;
 const ContentContainer = styled.div`
@@ -170,6 +178,18 @@ const ContentContainer = styled.div`
     justify-content: center;
     margin-top: 20px;
   }
+  @media (max-width: 400px) {
+    display: grid;
+    grid-template-columns: 50vw;
+    grid-template-rows: 40px 1px 1fr;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    .description{
+        padding: 15px;
+    }
+  }
   h4 {
     padding: 10px 0;
     font-size: 3rem;
@@ -185,6 +205,10 @@ const ContentContainer = styled.div`
     @media (orientation: landscape) and (max-width: 600px) {
       font-size: 1rem;
     }
+    @media (max-width: 400px) {
+        font-size: 1rem;
+   
+  }
   }
   h5 {
     border-top: 1px solid black;
@@ -202,6 +226,9 @@ const ContentContainer = styled.div`
     @media (orientation: landscape) and (max-width: 600px) {
       font-size: 0.5rem;
     }
+    @media (max-width: 400px) {
+        font-size: 0.5rem;
+  }
   }
   .content {
     display: flex;
@@ -209,6 +236,12 @@ const ContentContainer = styled.div`
     @media (max-width: 1400px) {
       width: 40vw;
     }
+    @media (max-width: 600px) {
+        width: 50vw;
+  }
+  @media (max-width: 400px) {
+    width: 50vw;
+  }
     @media (orientation: landscape) and (max-width: 600px) {
       width: 60vw;
     }
@@ -231,11 +264,15 @@ const ContentContainer = styled.div`
       height: 15vh;
     }
     @media (max-width: 600px) {
-      font-size: 2.5rem;
+        height: 25vh;
     }
     @media (orientation: landscape) and (max-width: 600px) {
       height: 50vh;
     }
+    @media (max-width: 400px) {
+        height: 25vh;
+   
+  }
   }
   .video {
     width: 100%;
