@@ -113,6 +113,7 @@ const FeedContainer = styled.div`
     font-size: 4rem;
     @media (max-width: 1400px) {
       font-size: 3.5rem;
+      overflow: "hidden";
     }
     @media (max-width: 900px) {
       font-size: 3rem;

@@ -103,6 +103,7 @@ const Nav = styled.nav`
   padding: 20px;
   height: 10vh;
   width: 100vw;
+  overflow: hidden;
   @media (max-width: 600px) {
     height: 5vh;
     padding-top: 10px;
