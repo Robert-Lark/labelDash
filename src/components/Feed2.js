@@ -131,6 +131,7 @@ const FeedContainer = styled.div`
   @media (orientation: landscape) and (max-width: 900px) {
     margin-top: 0px;
     width: 70vw;
+    margin-bottom: 70px;
   }
   @media (orientation: landscape) and (max-width: 600px) {
     margin-top: 50px;
@@ -140,6 +141,7 @@ const FeedContainer = styled.div`
     grid-template-columns: 70vw;
     grid-template-rows: 10vh 1fr;
     gap: 10px;
+    margin-bottom: 70px;
   }
   .headline {
     height: 15vh;
@@ -249,6 +251,12 @@ const ContentContainer = styled.div`
   img {
     width: 50%;
     padding: 10px 0;
+    @media (max-width: 600px) {
+        width: 50vw;
+  }
+  @media (max-width: 400px) {
+    width: 50vw;
+  }
   }
   .audio {
     width: 100%;
