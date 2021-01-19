@@ -111,6 +111,20 @@ const Nav = styled.nav`
     height: 5vh;
     padding-top: 10px;
   }
+  h1{
+    @media (min-width: 2000px) {
+      font-size: 3rem;  
+  }
+  @media (max-width: 1400px) {
+    font-size: 2rem;
+  }
+  @media (max-width: 900px) {
+    font-size: 1.5rem;
+  }
+  @media (max-width: 600px) {
+    font-size: 1rem;
+  }
+  }
 `;
 
 const BodyContainer = styled.div`

@@ -263,7 +263,7 @@ const ContentContainer = styled.div`
     height: 40vh;
     padding: 10px 0;
     @media (min-width: 2500px) {
-      height: 20vh;
+      height: 15vh;
     }
     @media (min-width: 1800px) {
       height: 25vh;
