@@ -75,7 +75,7 @@ function Dashboard() {
         </ButtonContainer>
         {all === 0 ? (
           <InstructionContainer
-            style={loading ? {display: "none"} : {display: "auto"}}
+            style={loading ? {display: "none"} : {display: "auto", overflow: "hidden"}}
           >
             <Feed />
           </InstructionContainer>
