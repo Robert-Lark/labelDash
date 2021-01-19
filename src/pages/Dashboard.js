@@ -13,7 +13,7 @@ import SONICPIECES_LOGO from "../img/SONICPIECES_LOGO.jpg";
 import imageLoading from "../img/loading.jpeg";
 import Releases from "./Releases";
 import {useSelector} from "react-redux";
-import Feed from "../components/Feed";
+import Feed from "../components/Feed2";
 
 function Dashboard() {
   const {all, loading} = useSelector((state) => state.releases);

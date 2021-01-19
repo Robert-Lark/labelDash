@@ -45,24 +45,7 @@ img{
     display: block;
 }
 
-@media (min-width: 1400px) {
-    h1 {
-      font-size: 100%;
-    }
-    h2 {
-      font-size: 100%;
-    }
-    h3 {
-      font-size: 100%;
 
-    }
-    h4 {
-      font-size: 100%;
-    }
-    h5 {
-      font-size: 100%;
-    }
-  }
 
 @media (max-width: 1400px) {
 

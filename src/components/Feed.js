@@ -79,10 +79,11 @@ function Feed(props) {
         <Images>
           <div className="title">
             <h4>New Release</h4>
-            <div className="description">
-              <h5>A New Interview With Drastic Steps Was Just Published</h5>
-            </div>
           </div>
+          <div className="description">
+            <h5>A New Interview With Drastic Steps Was Just Published</h5>
+          </div>
+
           <div className="content">
             <div className="image">
               <img src={Drastic} alt="newRelease" />
@@ -107,21 +108,23 @@ const FeedContainer = styled.div`
   padding: 0 30px 30px 30px;
   display: grid;
   gap: 10px;
+
   @media (max-width: 600px) {
     margin-top: 0px;
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 0 30px 0;
   }
   @media (orientation: landscape) and (max-width: 900px) {
     margin-top: 0px;
   }
+  @media (max-width: 400px) {
+  }
   h1 {
     height: 100%;
     text-align: center;
-    @media (max-width: 400px) {
-      width: 65%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
   }
 
   div {
@@ -169,9 +172,9 @@ const Soundcloud = styled.div`
     border-top: 1px solid black;
   }
   @media (min-width: 1400px) {
-  iframe{
-    padding: 5px;
-  }
+    iframe {
+      padding: 5px;
+    }
   }
   @media (max-width: 1400px) {
     height: 100%;
@@ -192,6 +195,9 @@ const Soundcloud = styled.div`
     }
   }
   @media (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     h4 {
       padding: 20px;
     }
@@ -266,6 +272,9 @@ const Youtube = styled.div`
     }
   }
   @media (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     h4 {
       padding: 20px;
     }
@@ -322,7 +331,7 @@ const Images = styled.div`
       grid-row: 3 / span 1;
       width: 100%;
     }
-    .image{
+    .image {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -360,19 +369,31 @@ const Images = styled.div`
     }
   }
   @media (max-width: 600px) {
-    height: auto;
-    h4 {
-      padding: 20px;
+    border: 1px solid black;
+    display: grid;
+    grid-template-rows: 20% 10% 40%;
+    gap: 0rem;
+    .title {
+      padding: 4px;
+      margin-bottom: 50px;
+      grid-column: 1 / span 2;
+      grid-row: 1 / span 1;
     }
-    h5 {
-      padding: 10px 0;
+    .description {
+      grid-column: 1 / span 2;
+      grid-row: 2 / span 1;
     }
     .content {
-      height: 70%;
+      padding: 5px;
+      border-radius: 15px;
+      grid-row: 3 / span 1;
+      width: 100%;
     }
     .image {
-      width: auto;
-      height: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
   }
 `;
