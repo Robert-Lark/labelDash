@@ -113,10 +113,10 @@ const Nav = styled.nav`
   }
   h1{
     @media (min-width: 2000px) {
-      font-size: 3rem;  
+      font-size: 4rem;  
   }
   @media (max-width: 1400px) {
-    font-size: 2rem;
+    font-size: 3rem;
   }
   @media (max-width: 900px) {
     font-size: 1.5rem;
