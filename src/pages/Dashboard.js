@@ -214,7 +214,10 @@ const InstructionContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-
+  @media (min-width: 1800px) {
+    height: 89vh;
+ border: 4px solid red;
+  }
   @media (max-width: 600px) {
     width: 75vw;
   }
