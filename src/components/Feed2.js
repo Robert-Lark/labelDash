@@ -71,7 +71,7 @@ const data = [
 function Feed2(props) {
   return (
     <FeedContainer>
-      <div className="title">
+      <div className="headline">
         <h1>FEED</h1>
       </div>
       {data.map((data) => (
@@ -108,7 +108,7 @@ const FeedContainer = styled.div`
   @media (max-width: 600px) {
     grid-template-columns: 55vw;
     grid-template-rows: 5vh 1fr;
-    }
+  }
   h1 {
     font-size: 4rem;
     @media (max-width: 1400px) {
@@ -117,7 +117,6 @@ const FeedContainer = styled.div`
     }
     @media (max-width: 900px) {
       font-size: 3rem;
-      
     }
     @media (max-width: 600px) {
       font-size: 2.5rem;
@@ -126,10 +125,19 @@ const FeedContainer = styled.div`
 
   @media (orientation: landscape) and (max-width: 900px) {
     margin-top: 0px;
-  }
-
-  @media (orientation: landscape) and (max-width: 900px) {
     width: 70vw;
+  }
+  @media (orientation: landscape) and (max-width: 600px) {
+    margin-top: 50px;
+    height: 90vh;
+    padding: 0 0 30px 0px;
+    display: grid;
+    grid-template-columns: 70vw;
+    grid-template-rows: 10vh 1fr;
+    gap: 10px;
+  }
+  .headline {
+    height: 15vh;
   }
 `;
 const ContentContainer = styled.div`
@@ -153,6 +161,15 @@ const ContentContainer = styled.div`
   @media (max-width: 600px) {
     grid-template-columns: 50vw;
   }
+  @media (orientation: landscape) and (max-width: 600px) {
+    display: grid;
+    grid-template-columns: 60vw;
+    grid-template-rows: 40px 1px 1fr;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+  }
   h4 {
     padding: 10px 0;
     font-size: 3rem;
@@ -164,6 +181,9 @@ const ContentContainer = styled.div`
     }
     @media (max-width: 600px) {
       font-size: 1.5rem;
+    }
+    @media (orientation: landscape) and (max-width: 600px) {
+      font-size: 1rem;
     }
   }
   h5 {
@@ -179,10 +199,19 @@ const ContentContainer = styled.div`
     @media (max-width: 600px) {
       font-size: 1rem;
     }
+    @media (orientation: landscape) and (max-width: 600px) {
+      font-size: 0.5rem;
+    }
   }
   .content {
     display: flex;
     justify-content: center;
+    @media (max-width: 1400px) {
+      width: 40vw;
+    }
+    @media (orientation: landscape) and (max-width: 600px) {
+      width: 60vw;
+    }
   }
   img {
     width: 50%;
@@ -192,28 +221,40 @@ const ContentContainer = styled.div`
     width: 100%;
     height: 40vh;
     padding: 10px 0;
+    @media (min-width: 1800px) {
+      height: 25vh;
+    }
     @media (max-width: 1400px) {
-      height: 30vh;
+      height: 18vh;
     }
     @media (max-width: 900px) {
-        height: 15vh;
+      height: 15vh;
     }
     @media (max-width: 600px) {
       font-size: 2.5rem;
+    }
+    @media (orientation: landscape) and (max-width: 600px) {
+      height: 50vh;
     }
   }
   .video {
     width: 100%;
     height: 40vh;
     padding: 10px 0;
+    @media (min-width: 1800px) {
+      height: 40vh;
+    }
     @media (max-width: 1400px) {
-      height: 55vh;
+      height: 40vh;
     }
     @media (max-width: 900px) {
       height: 25vh;
     }
     @media (max-width: 600px) {
       font-size: 2.5rem;
+    }
+    @media (orientation: landscape) and (max-width: 600px) {
+      height: 80vh;
     }
   }
 `;
