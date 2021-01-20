@@ -257,7 +257,7 @@ const ContentContainer = styled.div`
   }
   @media (max-width: 400px) {
     width: 30vw;
-    height: 17vh;
+    height: 20vh;
   }
   }
   .audio {
@@ -302,6 +302,7 @@ const ContentContainer = styled.div`
     }
     @media (max-width: 600px) {
       font-size: 2.5rem;
+      padding: 10px;
     }
     @media (orientation: landscape) and (max-width: 600px) {
       height: 80vh;
