@@ -1,4 +1,4 @@
-import React,{useRef} from "react";
+import React, {useRef} from "react";
 import styled from "styled-components";
 import {motion} from "framer-motion";
 import {useSelector} from "react-redux";
@@ -6,7 +6,7 @@ import {useHistory} from "react-router-dom";
 import ReactPlayer from "react-player/youtube";
 
 function ReleaseDetail({pathId}) {
-const reference = useRef()
+  const reference = useRef();
 
   const history = useHistory();
   const {detail, isLoading} = useSelector((state) => state.detail);
@@ -20,8 +20,12 @@ const reference = useRef()
   return (
     <>
       {!isLoading && (
-        <CardShadow ref={reference} className="shadow" onClick={exitDetailHandler}>
-          <Detail layoutId={pathId}>
+        <CardShadow
+          ref={reference}
+          className="shadow"
+          onClick={exitDetailHandler}
+        >
+          <Detail layoutId={pathId} style={detail.videos ? {marginTop: "800px"} : {marginTop: null}}>
             <Stats>
               <div>
                 <h1>{detail.artists_sort}</h1>
@@ -56,19 +60,10 @@ const reference = useRef()
             <Gallery>
               {detail.videos &&
                 detail.videos.map((video) => (
-                  <>
+                  <div className="video">
                     <h3>{video.title}</h3>
-                    <iframe
-        title="titleProp"
-        width="auto"
-        height="100%"
-        className="video"
-        src={video.uri}
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen="true"
-      ></iframe>
-                  </>
+                    <ReactPlayer url={video.uri} />
+                  </div>
                 ))}
             </Gallery>
             <div
@@ -122,6 +117,7 @@ const CardShadow = styled(motion.div)`
   }
 `;
 
+
 const Detail = styled(motion.div)`
   display: grid;
   width: 80%;
@@ -139,8 +135,9 @@ const Detail = styled(motion.div)`
     display: flex;
     flex-direction: column;
     align-items: center;
-margin-top: 100px;
-padding: 1rem;
+    
+    margin-top: 200px;
+    padding: 1rem;
   }
 `;
 const Stats = styled(motion.div)`
@@ -150,14 +147,14 @@ const Stats = styled(motion.div)`
   display: flex;
   justify-content: space-between;
   @media (max-width: 600px) {
-    h1{
+    h1 {
       font-size: 1rem;
     }
-    h3{
+    h3 {
       font-size: 1rem;
     }
-    h5{
-      font-size: .5rem;
+    h5 {
+      font-size: 0.5rem;
     }
     display: flex;
     flex-direction: column;
@@ -169,8 +166,8 @@ const Stats = styled(motion.div)`
 const Info = styled(motion.div)`
   text-align: center;
   @media (max-width: 600px) {
-    p{
-      font-size: .5rem;
+    p {
+      font-size: 0.5rem;
     }
   }
 `;
@@ -182,18 +179,17 @@ const Tracklist = styled(motion.div)`
     margin-left: 3rem;
   }
   @media (max-width: 600px) {
-
     width: 80vw;
-    p{
-      font-size: .5rem;
+    p {
+      font-size: 0.5rem;
     }
   }
 `;
 const Description = styled(motion.div)`
   margin: 5rem 0rem;
   @media (max-width: 600px) {
-    p{
-      font-size: .5rem;
+    p {
+      font-size: 0.5rem;
     }
   }
 `;
@@ -201,12 +197,17 @@ const Gallery = styled(motion.div)`
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
   @media (max-width: 600px) {
-
-    display: none;
+    .video {
+display: flex;
+flex-direction: column;
+  align-items: center;
+  height: 20vh;
+width: 70vw;
   
-
-}
+    }
+  }
 `;
 
 const Button = styled.button`
@@ -221,11 +222,10 @@ const Button = styled.button`
   &:hover {
     background: rgb(65, 65, 65);
     color: white;
-  }  
+  }
   @media (max-width: 600px) {
     display: none;
   }
-
 `;
 const CoverArt = styled.div`
   width: 39vw;
