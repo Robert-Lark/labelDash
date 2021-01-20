@@ -105,6 +105,12 @@ const CardShadow = styled(motion.div)`
   &::-webkit-scrollbar-track {
     background-color: white;
   }
+  @media (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
 `;
 
 const Detail = styled(motion.div)`
@@ -120,6 +126,13 @@ const Detail = styled(motion.div)`
   img {
     width: 100%;
   }
+  @media (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+margin-top: 300px;
+padding: 1rem;
+  }
 `;
 const Stats = styled(motion.div)`
   h5 {
@@ -127,9 +140,30 @@ const Stats = styled(motion.div)`
   }
   display: flex;
   justify-content: space-between;
+  @media (max-width: 600px) {
+    h1{
+      font-size: 1rem;
+    }
+    h3{
+      font-size: 1rem;
+    }
+    h5{
+      font-size: .5rem;
+    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    text-align: center;
+  }
 `;
 const Info = styled(motion.div)`
   text-align: center;
+  @media (max-width: 600px) {
+    p{
+      font-size: .5rem;
+    }
+  }
 `;
 const Tracklist = styled(motion.div)`
   display: flex;
@@ -138,9 +172,21 @@ const Tracklist = styled(motion.div)`
   img {
     margin-left: 3rem;
   }
+  @media (max-width: 600px) {
+
+    width: 80vw;
+    p{
+      font-size: .5rem;
+    }
+  }
 `;
 const Description = styled(motion.div)`
   margin: 5rem 0rem;
+  @media (max-width: 600px) {
+    p{
+      font-size: .5rem;
+    }
+  }
 `;
 const Gallery = styled(motion.div)`
   display: flex;
@@ -160,6 +206,9 @@ const Button = styled.button`
   &:hover {
     background: rgb(65, 65, 65);
     color: white;
+  }  
+  @media (max-width: 600px) {
+    display: none;
   }
 
 `;
