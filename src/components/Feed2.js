@@ -146,7 +146,7 @@ const FeedContainer = styled.div`
   .headline {
     height: 15vh;
     @media (max-width: 600px) {
-      height: 20vh;
+      height: 30vh;
     }
   }
 `;
@@ -253,9 +253,11 @@ const ContentContainer = styled.div`
     padding: 10px 0;
     @media (max-width: 600px) {
         width: 50vw;
+  
   }
   @media (max-width: 400px) {
     width: 30vw;
+    height: 17vh;
   }
   }
   .audio {
