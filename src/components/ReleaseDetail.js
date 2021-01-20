@@ -25,7 +25,7 @@ function ReleaseDetail({pathId}) {
           className="shadow"
           onClick={exitDetailHandler}
         >
-          <Detail layoutId={pathId} style={detail.videos ? {marginTop: "200px"} : {marginTop: null}}>
+          <Detail layoutId={pathId}>
             <Stats>
               <div>
                 <h1>{detail.artists_sort}</h1>
