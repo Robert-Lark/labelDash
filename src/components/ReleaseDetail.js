@@ -58,7 +58,16 @@ const reference = useRef()
                 detail.videos.map((video) => (
                   <>
                     <h3>{video.title}</h3>
-                    <ReactPlayer url={video.uri} />
+                    <iframe
+        title="titleProp"
+        width="auto"
+        height="100%"
+        className="video"
+        src={video.uri}
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen="true"
+      ></iframe>
                   </>
                 ))}
             </Gallery>
@@ -130,7 +139,7 @@ const Detail = styled(motion.div)`
     display: flex;
     flex-direction: column;
     align-items: center;
-margin-top: 300px;
+margin-top: 100px;
 padding: 1rem;
   }
 `;
@@ -192,6 +201,12 @@ const Gallery = styled(motion.div)`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media (max-width: 600px) {
+
+    display: none;
+  
+
+}
 `;
 
 const Button = styled.button`
