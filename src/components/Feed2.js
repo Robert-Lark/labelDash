@@ -255,7 +255,7 @@ const ContentContainer = styled.div`
         width: 50vw;
   }
   @media (max-width: 400px) {
-    width: 50vw;
+    width: 30vw;
   }
   }
   .audio {
