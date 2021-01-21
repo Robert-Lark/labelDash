@@ -25,7 +25,7 @@ function ReleaseDetail({pathId}) {
           className="shadow"
           onClick={exitDetailHandler}
         >
-          <Detail layoutId={pathId}>
+          <Detail layoutId={pathId} className={detail.videos ? "videos" : null}>
             <Stats>
               <div>
                 <h1>{detail.artists_sort}</h1>
@@ -136,8 +136,12 @@ const Detail = styled(motion.div)`
     flex-direction: column;
     align-items: center;
     
-    margin-top: 200px;
+    margin-top: 400px;
     padding: 1rem;
+    .videos{
+      border: 2px solid red;
+      margin-top: 1800px;
+  }
   }
 `;
 const Stats = styled(motion.div)`
@@ -199,8 +203,10 @@ const Gallery = styled(motion.div)`
   align-items: center;
   overflow: hidden;
   @media (max-width: 600px) {
+    
     .video {
-display: flex;
+
+display: none;
 flex-direction: column;
   align-items: center;
   height: 20vh;
