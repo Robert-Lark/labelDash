@@ -246,5 +246,8 @@ const LoadingImage = styled.img`
   width: 13vw;
   height: 20vh;
   transform: rotate(360deg);
+  @media (max-width: 600px) {
+    width: 40vw;
+  }
 `;
 export default Dashboard;
