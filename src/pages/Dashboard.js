@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {useDispatch} from "react-redux";
 import {loadReleases} from "../actions/releasesActions";
 //CSS
@@ -13,13 +13,17 @@ import SONICPIECES_LOGO from "../img/SONICPIECES_LOGO.jpg";
 import imageLoading from "../img/loading.jpeg";
 import Releases from "./Releases";
 import {useSelector} from "react-redux";
-import Feed from "../components/Feed2";
+import Feed from "../components/Feed";
+import Reccomendations from "../components/Reccomendations";
 
 function Dashboard() {
+
+  const [reccomendations, setReccomendations] = useState(false)
   const {all, loading} = useSelector((state) => state.releases);
   const dispatch = useDispatch();
   const labelHandler = (id) => {
     dispatch(loadReleases(id));
+    setReccomendations(false)
   };
   return (
     <Container>
@@ -37,7 +41,7 @@ function Dashboard() {
           <Button>
             <h3>Search</h3>
           </Button>
-          <Button>
+          <Button onClick={() => setReccomendations(true)}>
             <h3>Reccomendations</h3>
           </Button>
           <Button>
@@ -76,7 +80,13 @@ function Dashboard() {
             />
           </Button>
         </ButtonContainer>
-        {all === 0 ? (
+        {reccomendations ? (
+          <InstructionContainer
+            style={loading ? {display: "none"} : {display: "auto", overflow: "hidden"}}
+          >
+            <Reccomendations />
+          </InstructionContainer>
+        ) : all === 0 ? (
           <InstructionContainer
             style={loading ? {display: "none"} : {display: "auto", overflow: "hidden"}}
           >

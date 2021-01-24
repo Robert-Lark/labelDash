@@ -136,7 +136,7 @@ const Detail = styled(motion.div)`
     flex-direction: column;
     align-items: center;
     
-    margin-top: 400px;
+    margin-top: 100px;
     padding: 1rem;
     .videos{
       border: 2px solid red;
