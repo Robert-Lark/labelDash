@@ -12,7 +12,6 @@ function Reccomendations() {
   const pathId = location.pathname.split("/")[2];
   const detailsLoading = useSelector((state) => state.detail.isLoading);
   const data = useSelector((state) => state.detail.reccomendedData);
-  console.log(data);
   return (
     <ReleasesList>
       <AnimateSharedLayout type="crossfade">
@@ -33,7 +32,7 @@ function Reccomendations() {
             </>
           ) : (
             <>
-              <h2>Reccomended Titles</h2>
+              <h1>Reccomended Titles</h1>
               <p>
                 Unfamiliar with the labels we love? Here are a few titles
                 selected from each imprint to give you a great place to start.
@@ -170,24 +169,23 @@ function Reccomendations() {
 const ReleasesList = styled(motion.div)`
   padding: 0rem 5rem;
   height: 90vh;
+  text-align: center;
   h2 {
     padding: 5rem 0rem;
   }
   h4 {
     padding-bottom: "50px";
   }
-  .labelLogo {
-    padding-bottom: 50px;
-    width: 20vw;
-    @media (max-width: 1400px) {
-      padding-bottom: 30px;
-    }
-  }
   @media (max-width: 1400px) {
     padding: 0;
   }
   @media (max-width: 600px) {
-    width: 60vw;
+
+    h1{
+      font-size: 1.5rem;
+    }
+    padding: 1rem;
+    width: 90vw;
   }
 `;
 
@@ -196,6 +194,7 @@ const IndividualRelease = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   gap: 1rem;
+
   @media (min-width: 1400px) {
     grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
     gap: 1rem;
@@ -204,6 +203,13 @@ const IndividualRelease = styled(motion.div)`
   @media (max-width: 1400px) {
     padding: 15px;
   }
+  @media (max-width: 600px) {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  width: 50vw;
+padding: 0px 80px;
+  }
+
 `;
 const LoadingImage = styled.img`
   width: 13vw;
