@@ -54,7 +54,7 @@ function Reccomendations() {
                       name={release.title}
                       format={release.format}
                       released={release.year}
-                      artist={release.artist}
+                                    artist={release.artists_sort}
                       id={release.id}
                       master={release.resource_url}
                       image={release.thumb}
@@ -77,7 +77,7 @@ function Reccomendations() {
                       name={release.title}
                       format={release.format}
                       released={release.year}
-                      artist={release.artist}
+                                    artist={release.artists_sort}
                       id={release.id}
                       master={release.resource_url}
                       image={release.thumb}
@@ -100,7 +100,7 @@ function Reccomendations() {
                       name={release.title}
                       format={release.format}
                       released={release.year}
-                      artist={release.artist}
+                                    artist={release.artists_sort}
                       id={release.id}
                       master={release.resource_url}
                       image={release.thumb}
@@ -123,7 +123,7 @@ function Reccomendations() {
                       name={release.title}
                       format={release.format}
                       released={release.year}
-                      artist={release.artist}
+                                    artist={release.artists_sort}
                       id={release.id}
                       master={release.resource_url}
                       image={release.thumb}
@@ -141,12 +141,13 @@ function Reccomendations() {
             <IndividualRelease>
               {data.map((release) => {
                 if (release.labels[0].name === "Sonic Pieces") {
+                  console.log(release.artist)
                   return (
                     <Release
                       name={release.title}
                       format={release.format}
                       released={release.year}
-                      artist={release.artist}
+                      artist={release.artists_sort}
                       id={release.id}
                       master={release.resource_url}
                       image={release.thumb}
