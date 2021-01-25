@@ -3,7 +3,6 @@ import Release from "./Release";
 import styled from "styled-components";
 import {useLocation} from "react-router-dom";
 import {useSelector} from "react-redux";
-import {Link} from "react-router-dom";
 import imageLoading from "../img/loading.jpeg";
 import ReleaseDetail from "./ReleaseDetail";
 import {motion, AnimatePresence, AnimateSharedLayout} from "framer-motion";
@@ -13,7 +12,7 @@ function Reccomendations() {
   const pathId = location.pathname.split("/")[2];
   const detailsLoading = useSelector((state) => state.detail.isLoading);
   const data = useSelector((state) => state.detail.reccomendedData);
-console.log(data)
+  console.log(data);
   return (
     <ReleasesList>
       <AnimateSharedLayout type="crossfade">
@@ -43,125 +42,131 @@ console.log(data)
           )}
         </div>
         {detailsLoading ? (
-            <>
-            
-            </>
-          ) : (
-            <>   <h1>Denovali Records</h1>
-        <IndividualRelease>
-        
-{data.map((release) => {
-  if (release.labels[0].name === "Denovali Records") {
-            return (
-              <Release
-                name={release.title}
-                format={release.format}
-                released={release.year}
-                artist={release.artist}
-                id={release.id}
-                master={release.resource_url}
-                image={release.thumb}
-                key={release.id}
-                catno={release.catno}
-              />
-              
-            )};
-          }) }
-        </IndividualRelease>
-        <br>
-        </br>
-        <h1>Erased Tapes Records</h1>
-        <IndividualRelease>
-        
-{data.map((release) => {
-  if (release.labels[0].name === "Erased Tapes Records") {
-            return (
-              <Release
-                name={release.title}
-                format={release.format}
-                released={release.year}
-                artist={release.artist}
-                id={release.id}
-                master={release.resource_url}
-                image={release.thumb}
-                key={release.id}
-                catno={release.catno}
-              />
-              
-            )};
-          }) }
-        </IndividualRelease>
-        <br>
-        </br>
-        <h1>Ki Records</h1>
-        <IndividualRelease>
-        
-{data.map((release) => {
-  if (release.labels[0].name === "Ki Records (2)") {
-            return (
-              <Release
-                name={release.title}
-                format={release.format}
-                released={release.year}
-                artist={release.artist}
-                id={release.id}
-                master={release.resource_url}
-                image={release.thumb}
-                key={release.id}
-                catno={release.catno}
-              />
-              
-            )};
-          }) }
-        </IndividualRelease>
-        <br>
-        </br>
-        <h1>Miasmah</h1>
-        <IndividualRelease>
-        
-{data.map((release) => {
-  if (release.labels[0].name === "Miasmah") {
-            return (
-              <Release
-                name={release.title}
-                format={release.format}
-                released={release.year}
-                artist={release.artist}
-                id={release.id}
-                master={release.resource_url}
-                image={release.thumb}
-                key={release.id}
-                catno={release.catno}
-              />
-              
-            )};
-          }) }
-        </IndividualRelease>
-        <br>
-        </br>
-        <h1>Sonic Pieces</h1>
-        <IndividualRelease>
-        
-{data.map((release) => {
-  if (release.labels[0].name === "Sonic Pieces") {
-            return (
-              <Release
-                name={release.title}
-                format={release.format}
-                released={release.year}
-                artist={release.artist}
-                id={release.id}
-                master={release.resource_url}
-                image={release.thumb}
-                key={release.id}
-                catno={release.catno}
-              />
-              
-            )};
-          }) }
-        </IndividualRelease>
-        </>
-          )}
+          <></>
+        ) : (
+          <>
+            {" "}
+            <h1>Denovali Records</h1>
+            <IndividualRelease>
+              {/* eslint-disable-next-line */}
+              {data.map((release) => {
+                if (release.labels[0].name === "Denovali Records") {
+                  return (
+                    <Release
+                      name={release.title}
+                      format={release.format}
+                      released={release.year}
+                      artist={release.artist}
+                      id={release.id}
+                      master={release.resource_url}
+                      image={release.thumb}
+                      key={release.id}
+                      catno={release.catno}
+                    />
+                  );
+                } else {
+                  <>Error</>;
+                }
+              })}
+            </IndividualRelease>
+            <br></br>
+            <h1>Erased Tapes Records</h1>
+            <IndividualRelease>
+                {/* eslint-disable-next-line */}
+              {data.map((release) => {
+                if (release.labels[0].name === "Erased Tapes Records") {
+                  return (
+                    <Release
+                      name={release.title}
+                      format={release.format}
+                      released={release.year}
+                      artist={release.artist}
+                      id={release.id}
+                      master={release.resource_url}
+                      image={release.thumb}
+                      key={release.id}
+                      catno={release.catno}
+                    />
+                  );
+                } else {
+                  <>Error</>;
+                }
+              })}
+            </IndividualRelease>
+            <br></br>
+            <h1>Ki Records</h1>
+            <IndividualRelease>
+                {/* eslint-disable-next-line */}
+              {data.map((release) => {
+                if (release.labels[0].name === "Ki Records (2)") {
+                  return (
+                    <Release
+                      name={release.title}
+                      format={release.format}
+                      released={release.year}
+                      artist={release.artist}
+                      id={release.id}
+                      master={release.resource_url}
+                      image={release.thumb}
+                      key={release.id}
+                      catno={release.catno}
+                    />
+                  );
+                } else {
+                  <>Error</>;
+                }
+              })}
+            </IndividualRelease>
+            <br></br>
+            <h1>Miasmah</h1>
+            <IndividualRelease>
+                {/* eslint-disable-next-line */}
+              {data.map((release) => {
+                if (release.labels[0].name === "Miasmah") {
+                  return (
+                    <Release
+                      name={release.title}
+                      format={release.format}
+                      released={release.year}
+                      artist={release.artist}
+                      id={release.id}
+                      master={release.resource_url}
+                      image={release.thumb}
+                      key={release.id}
+                      catno={release.catno}
+                    />
+                  );
+                } else {
+                  <>Error</>;
+                }
+              })}
+            </IndividualRelease>
+            <br></br>
+            <h1>Sonic Pieces</h1>
+            <IndividualRelease>
+                {/* eslint-disable-next-line */}
+              {data.map((release) => {
+                if (release.labels[0].name === "Sonic Pieces") {
+                  return (
+                    <Release
+                      name={release.title}
+                      format={release.format}
+                      released={release.year}
+                      artist={release.artist}
+                      id={release.id}
+                      master={release.resource_url}
+                      image={release.thumb}
+                      key={release.id}
+                      catno={release.catno}
+                    />
+                  );
+                } else {
+                  <>Error</>;
+                }
+              })}
+            </IndividualRelease>
+          </>
+        )}
       </AnimateSharedLayout>
     </ReleasesList>
   );
@@ -169,7 +174,7 @@ console.log(data)
 
 const ReleasesList = styled(motion.div)`
   padding: 0rem 5rem;
-height: 100vh;
+  height: 100vh;
   h2 {
     padding: 5rem 0rem;
   }
@@ -192,7 +197,6 @@ height: 100vh;
 `;
 
 const IndividualRelease = styled(motion.div)`
-
   min-height: 10vh;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
