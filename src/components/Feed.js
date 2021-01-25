@@ -14,7 +14,7 @@ const data = [
         height="auto"
         scrolling="no"
         className="audio"
-        frameborder="no"
+        frameBorder="no"
         allow="autoplay"
         src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/929458261&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true`}
       ></iframe>
@@ -31,9 +31,9 @@ const data = [
         height="100%"
         className="video"
         src="https://www.youtube.com/embed/Qk_Dmv6ccsA"
-        frameborder="0"
+        frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen="true"
+        allowFullScreen={true}
       ></iframe>
     ),
     img: "",
@@ -53,7 +53,7 @@ const data = [
         width="100%"
         height="auto"
         scrolling="no"
-        frameborder="no"
+        frameBorder="no"
         allow="autoplay"
         src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/956460496&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true`}
       ></iframe>
@@ -68,14 +68,14 @@ const data = [
   },
 ];
 
-function Feed2(props) {
+function Feed(props) {
   return (
     <FeedContainer>
       <div className="headline">
         <h1>FEED</h1>
       </div>
       {data.map((data) => (
-        <ContentContainer>
+        <ContentContainer key={data.description}>
           <div className="title">
             <h4>{data.title}</h4>
           </div>
@@ -89,7 +89,7 @@ function Feed2(props) {
   );
 }
 
-export default Feed2;
+export default Feed;
 
 const FeedContainer = styled.div`
   margin-top: 50px;

@@ -2,6 +2,7 @@ const initialState = {
     detail: {},
     format: {},
     isLoading: true,
+    reccomendedData: {}
   };
   
   const releaseDetailReducer = (state = initialState, action) => {
@@ -10,6 +11,7 @@ const initialState = {
               return{
                   ...state,
                  detail: action.payload.releaseData,
+                 reccomendedData: action.payload.reccomended,
                  format: action.payload.formatData,
                  isLoading: false,
               };

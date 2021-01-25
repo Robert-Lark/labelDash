@@ -6,7 +6,7 @@ import {loadDetail} from "../actions/detailReleaseAction";
 import {useSelector} from "react-redux";
 import {Link} from "react-router-dom";
 import imageLoading from "../img/loading.jpeg";
-function Release({name, image, id, artist, format}) {
+function Release({name, image, id, artist}) {
   const detailsLoading = useSelector((state) => state.detail.detailsLoading);
 
   const stringPathId = id.toString();
@@ -47,6 +47,7 @@ const StyledRelease = styled(motion.div)`
     height: 10vh;
     object-fit: cover;
   }
+
 `;
 
 const StyledText = styled.div`

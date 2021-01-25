@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import {useDispatch} from "react-redux";
 import {loadReleases} from "../actions/releasesActions";
+import {loadReccomended} from "../actions/reccomendedAction"
 //CSS
 import styled from "styled-components";
 //import {mediaPhone, mediaTabletPortrait, mediaTabletLandscape, mediaLargeDesktop} from '../utils/mediaMixins'
@@ -25,6 +26,10 @@ function Dashboard() {
     dispatch(loadReleases(id));
     setReccomendations(false)
   };
+  const reccomended = () => {
+    setReccomendations(true)
+    dispatch(loadReccomended());
+  }
   return (
     <Container>
       <Nav>
@@ -41,7 +46,7 @@ function Dashboard() {
           <Button>
             <h3>Search</h3>
           </Button>
-          <Button onClick={() => setReccomendations(true)}>
+          <Button onClick={() => reccomended()}>
             <h3>Reccomendations</h3>
           </Button>
           <Button>
@@ -90,7 +95,7 @@ function Dashboard() {
           <InstructionContainer
             style={loading ? {display: "none"} : {display: "auto", overflow: "hidden"}}
           >
-            <Feed />
+            <Feed/>
           </InstructionContainer>
         ) : (
           <ReleasesContainer>

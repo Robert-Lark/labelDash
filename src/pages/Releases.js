@@ -40,7 +40,7 @@ function ReleasesSmall({loading}) {
           ) : (
             <img
               src={labelInfo.images[0].resource_url}
-              class="labelLogo"
+              className="labelLogo"
               alt={labelInfo.name}
             />
           )}
@@ -92,6 +92,7 @@ const ReleasesList = styled(motion.div)`
   @media (max-width: 600px) {
     width: 60vw;
   }
+
 `;
 const IndividualRelease = styled(motion.div)`
   min-height: 80vh;
@@ -106,6 +107,7 @@ const IndividualRelease = styled(motion.div)`
   @media (max-width: 1400px) {
     padding: 15px;
   }
+
 `;
 
 const LoadingImage = styled.img`
