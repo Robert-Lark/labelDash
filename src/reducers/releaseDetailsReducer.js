@@ -15,6 +15,13 @@ const initialState = {
                  format: action.payload.formatData,
                  isLoading: false,
               };
+              case "GET_RECCOMENDED":
+              return{
+                  ...state,
+                 detail: action.payload.reccomended,
+                 reccomendedData: action.payload.reccomended,
+                 isLoading: false,
+              };
               case "LOADING_DETAIL":
                 return {
                     ...state,

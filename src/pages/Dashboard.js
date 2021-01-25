@@ -127,7 +127,10 @@ const Nav = styled.nav`
     padding-top: 10px;
   }
   h1{
-    @media (min-width: 2000px) {
+    @media (min-width: 1800px) {
+      font-size: 5rem;  
+  }
+  @media (min-width: 1400px) {
       font-size: 4rem;  
   }
   @media (max-width: 1400px) {
@@ -186,17 +189,18 @@ const Button = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  cursor: pointer;
   img {
     border-radius: 20px;
     max-width: 100%;
     max-height: 100%;
-    cursor: pointer;
+   
     padding: 5px;
   }
   @media (min-width: 1400px) {
 
     h3{
-
+font-size: 3rem;
       overflow: hidden;
     }
   }

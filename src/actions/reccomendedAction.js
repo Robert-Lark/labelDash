@@ -33,7 +33,6 @@ const reccomendedIds = [
 export const loadReccomended = () => async (dispatch) => {
   const reccomendedData = []
   for (let i = 0; i < reccomendedIds.length; i++) { 
-      
     const titles = await axios.get(releaseDetailsURL(reccomendedIds[i]));
     reccomendedData.push(titles.data);
   }
@@ -55,10 +54,9 @@ export const loadReccomended = () => async (dispatch) => {
   });
 
   dispatch({
-    type: "GET_DETAIL",
+    type: "GET_RECCOMENDED",
     payload: {
       reccomended: reccomendedData,
-      //formatData: formatDetails.data
     },
   });
 };
