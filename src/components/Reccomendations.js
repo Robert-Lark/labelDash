@@ -170,6 +170,9 @@ const ReleasesList = styled(motion.div)`
   padding: 0rem 5rem;
   height: 90vh;
   text-align: center;
+  h1{
+     padding: 25px 0;
+    }
   h2 {
     padding: 5rem 0rem;
   }
@@ -206,8 +209,12 @@ const IndividualRelease = styled(motion.div)`
   @media (max-width: 600px) {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
-  width: 50vw;
-padding: 0px 80px;
+  width: 60vw;
+padding: 0px 20px;
+  } 
+  @media (max-width: 400px) {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+padding: 0px 10px;
   }
 
 `;
