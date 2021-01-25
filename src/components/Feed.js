@@ -114,6 +114,7 @@ const FeedContainer = styled.div`
     grid-template-rows: 5vh 1fr;
     margin-bottom: 70px;
   }
+ 
   h1 {
     font-size: 4rem;
     @media (max-width: 1400px) {
@@ -126,12 +127,16 @@ const FeedContainer = styled.div`
     @media (max-width: 600px) {
       font-size: 2.5rem;
     }
+    @media (orientation: landscape) and (max-width: 900px) {
+    margin-top: -25px;
+    font-size: 2rem;
+  }
   }
 
   @media (orientation: landscape) and (max-width: 900px) {
     margin-top: 0px;
     width: 70vw;
-    margin-bottom: 70px;
+    margin-bottom: 0px;
   }
   @media (orientation: landscape) and (max-width: 600px) {
     margin-top: 50px;
@@ -157,7 +162,13 @@ const FeedContainer = styled.div`
      padding-top: 20px;
 
     }
+
+  @media (orientation: landscape) and (max-width: 600px) {
+    padding-top: 5px;
   }
+
+  }
+  
 `;
 const ContentContainer = styled.div`
   overflow: visible;
@@ -182,6 +193,7 @@ const ContentContainer = styled.div`
     grid-template-columns: 50vw;
     margin-top: 50px;
   }
+
   @media (orientation: landscape) and (max-width: 600px) {
     display: grid;
     grid-template-columns: 60vw;

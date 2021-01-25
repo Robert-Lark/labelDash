@@ -143,6 +143,9 @@ const Nav = styled.nav`
     font-size: 1rem;
   }
   }
+  @media (orientation: landscape) and (max-width: 900px) {
+   height: 20vh;
+  }
 `;
 
 const BodyContainer = styled.div`
