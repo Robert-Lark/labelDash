@@ -131,6 +131,10 @@ const FeedContainer = styled.div`
     margin-top: -25px;
     font-size: 2rem;
   }
+  @media (orientation: landscape) and (max-width: 600px) {
+    margin-top: 10px;
+    font-size: 2rem;
+  }
   }
 
   @media (orientation: landscape) and (max-width: 900px) {
