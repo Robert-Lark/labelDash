@@ -48,7 +48,6 @@ function Reccomendations() {
             {" "}
             <h1>Denovali Records</h1>
             <IndividualRelease>
-              {/* eslint-disable-next-line */}
               {data.map((release) => {
                 if (release.labels[0].name === "Denovali Records") {
                   return (
@@ -65,14 +64,13 @@ function Reccomendations() {
                     />
                   );
                 } else {
-                  <>Error</>;
+                  return null
                 }
               })}
             </IndividualRelease>
             <br></br>
             <h1>Erased Tapes Records</h1>
             <IndividualRelease>
-                {/* eslint-disable-next-line */}
               {data.map((release) => {
                 if (release.labels[0].name === "Erased Tapes Records") {
                   return (
@@ -89,14 +87,13 @@ function Reccomendations() {
                     />
                   );
                 } else {
-                  <>Error</>;
+                  return null
                 }
               })}
             </IndividualRelease>
             <br></br>
             <h1>Ki Records</h1>
             <IndividualRelease>
-                {/* eslint-disable-next-line */}
               {data.map((release) => {
                 if (release.labels[0].name === "Ki Records (2)") {
                   return (
@@ -113,14 +110,13 @@ function Reccomendations() {
                     />
                   );
                 } else {
-                  <>Error</>;
+                  return null
                 }
               })}
             </IndividualRelease>
             <br></br>
             <h1>Miasmah</h1>
             <IndividualRelease>
-                {/* eslint-disable-next-line */}
               {data.map((release) => {
                 if (release.labels[0].name === "Miasmah") {
                   return (
@@ -137,14 +133,13 @@ function Reccomendations() {
                     />
                   );
                 } else {
-                  <>Error</>;
+                  return null
                 }
               })}
             </IndividualRelease>
             <br></br>
             <h1>Sonic Pieces</h1>
             <IndividualRelease>
-                {/* eslint-disable-next-line */}
               {data.map((release) => {
                 if (release.labels[0].name === "Sonic Pieces") {
                   return (
@@ -161,7 +156,7 @@ function Reccomendations() {
                     />
                   );
                 } else {
-                  <>Error</>;
+                  return null
                 }
               })}
             </IndividualRelease>
@@ -174,7 +169,7 @@ function Reccomendations() {
 
 const ReleasesList = styled(motion.div)`
   padding: 0rem 5rem;
-  height: 100vh;
+  height: 90vh;
   h2 {
     padding: 5rem 0rem;
   }
@@ -197,7 +192,7 @@ const ReleasesList = styled(motion.div)`
 `;
 
 const IndividualRelease = styled(motion.div)`
-  min-height: 10vh;
+
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   gap: 1rem;
