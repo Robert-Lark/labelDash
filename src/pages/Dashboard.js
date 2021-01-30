@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {useDispatch} from "react-redux";
 import {loadReleases} from "../actions/releasesActions";
-import {loadReccomended} from "../actions/reccomendedAction"
+import {loadReccomended} from "../actions/reccomendedAction";
 //CSS
 import styled from "styled-components";
 //import {mediaPhone, mediaTabletPortrait, mediaTabletLandscape, mediaLargeDesktop} from '../utils/mediaMixins'
@@ -18,22 +18,25 @@ import Feed from "../components/Feed";
 import Reccomendations from "../components/Reccomendations";
 
 function Dashboard() {
-
-  const [reccomendations, setReccomendations] = useState(false)
+  const [reccomendations, setReccomendations] = useState(false);
   const {all, loading} = useSelector((state) => state.releases);
   const dispatch = useDispatch();
   const labelHandler = (id) => {
     dispatch(loadReleases(id));
-    setReccomendations(false)
+    setReccomendations(false);
   };
   const reccomended = () => {
-    setReccomendations(true)
+    setReccomendations(true);
     dispatch(loadReccomended());
-  }
+  };
   return (
     <Container>
       <Nav>
         <h1>A Collection Of Sonic Architecture</h1>
+        <div>
+          <Button className="logSignButton">Log In</Button>
+          <Button className="logSignButton">Sign Up</Button>
+        </div>
       </Nav>
       <BodyContainer>
         <ButtonContainer>
@@ -87,15 +90,23 @@ function Dashboard() {
         </ButtonContainer>
         {reccomendations ? (
           <InstructionContainer
-            style={loading ? {display: "none"} : {display: "auto", overflow: "hidden"}}
+            style={
+              loading
+                ? {display: "none"}
+                : {display: "auto", overflow: "hidden"}
+            }
           >
             <Reccomendations />
           </InstructionContainer>
         ) : all === 0 ? (
           <InstructionContainer
-            style={loading ? {display: "none"} : {display: "auto", overflow: "hidden"}}
+            style={
+              loading
+                ? {display: "none"}
+                : {display: "auto", overflow: "hidden"}
+            }
           >
-            <Feed/>
+            <Feed />
           </InstructionContainer>
         ) : (
           <ReleasesContainer>
@@ -119,32 +130,46 @@ function Dashboard() {
 const Container = styled.div``;
 const Nav = styled.nav`
   padding: 20px;
-  height: 10vh;
+  height: 12vh;
   width: 100vw;
   overflow: hidden;
+display: flex;
+justify-content: space-between;
+div{
+  @media (max-width: 600px) {
+display: flex;
+  }
+.logSignButton{
+  width: 15vw;
+  margin: 5px;
+}
+}
+  h1 {
+    @media (min-width: 1800px) {
+      font-size: 5rem;
+    }
+    @media (min-width: 1400px) {
+      font-size: 4rem;
+    }
+    @media (max-width: 1400px) {
+      font-size: 3rem;
+    }
+    @media (max-width: 1130px) {
+      font-size: 2.5rem;
+    }
+    @media (max-width: 900px) {
+      font-size: 1.5rem;
+    }
+    @media (max-width: 600px) {
+      font-size: 1rem;
+    }
+  }
   @media (max-width: 600px) {
     height: 5vh;
     padding-top: 10px;
   }
-  h1{
-    @media (min-width: 1800px) {
-      font-size: 5rem;  
-  }
-  @media (min-width: 1400px) {
-      font-size: 4rem;  
-  }
-  @media (max-width: 1400px) {
-    font-size: 3rem;
-  }
-  @media (max-width: 900px) {
-    font-size: 1.5rem;
-  }
-  @media (max-width: 600px) {
-    font-size: 1rem;
-  }
-  }
   @media (orientation: landscape) and (max-width: 900px) {
-   height: 20vh;
+    height: 20vh;
   }
 `;
 
@@ -197,13 +222,12 @@ const Button = styled.div`
     border-radius: 20px;
     max-width: 100%;
     max-height: 100%;
-   
+
     padding: 5px;
   }
   @media (min-width: 1400px) {
-
-    h3{
-font-size: 3rem;
+    h3 {
+      font-size: 3rem;
       overflow: hidden;
     }
   }
