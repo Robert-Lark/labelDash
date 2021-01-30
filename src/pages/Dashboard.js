@@ -35,7 +35,6 @@ function Dashboard() {
         <h1>A Collection Of Sonic Architecture</h1>
         <div>
           <Button className="logSignButton">Log In</Button>
-          <Button className="logSignButton">Sign Up</Button>
         </div>
       </Nav>
       <BodyContainer>
@@ -141,7 +140,7 @@ display: flex;
   }
   @media (max-width: 400px) {
    flex-direction: column;
-   height:6vh;
+   height:3vh;
   }
 .logSignButton{
   width: 15vw;
@@ -187,7 +186,7 @@ display: flex;
     padding-top: 10px;
   }
   @media (max-width: 400px) {
-    height: 10vh;
+    height: 8vh;
   }
   @media (orientation: landscape) and (max-width: 900px) {
     height: 20vh;
