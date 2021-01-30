@@ -9,6 +9,8 @@ import {Provider} from "react-redux";
 import thunk from "redux-thunk";
 import logger from 'redux-logger'
 import { BrowserRouter } from "react-router-dom";
+import Auth0ProviderWithHistory from "./auth/auth0-provider-with-history";
+
 
 const composeEnhancer =
     window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -19,7 +21,9 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
+      <Auth0ProviderWithHistory>
       <App />
+      </Auth0ProviderWithHistory>
       </BrowserRouter>
     </Provider>
   </React.StrictMode>,
