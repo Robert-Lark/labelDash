@@ -139,9 +139,24 @@ div{
   @media (max-width: 600px) {
 display: flex;
   }
+  @media (max-width: 400px) {
+   flex-direction: column;
+   height:6vh;
+  }
 .logSignButton{
   width: 15vw;
   margin: 5px;
+  @media (max-width: 600px) {
+    width: 15vw;
+    height: 2vh;
+    font-size: .5rem;
+  }
+  @media (max-width: 400px) {
+    width: 15vw;
+    height: 5vh;
+    margin: 2px;
+    font-size: 8px;
+  }
 }
 }
   h1 {
@@ -163,10 +178,16 @@ display: flex;
     @media (max-width: 600px) {
       font-size: 1rem;
     }
+    @media (max-width: 400px) {
+      font-size: .8rem;
+    }
   }
   @media (max-width: 600px) {
     height: 5vh;
     padding-top: 10px;
+  }
+  @media (max-width: 400px) {
+    height: 10vh;
   }
   @media (orientation: landscape) and (max-width: 900px) {
     height: 20vh;
