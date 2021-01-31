@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import styled from "styled-components";
 import {motion} from "framer-motion";
 import {useSelector} from "react-redux";
-import Release from "./Release";
+import Release from "./LabelComponents/Release";
 const Search = () => {
   const inputHandler = (e) => {
     setSearchInput(e);

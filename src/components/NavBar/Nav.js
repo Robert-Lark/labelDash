@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import AuthNav from "./NavBar/auth-nav";
+import AuthNav from "./auth-nav";
 
 
 function Nav(props) {

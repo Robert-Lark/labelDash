@@ -2,13 +2,14 @@ import React from "react";
 import {useDispatch} from "react-redux";
 import styled from "styled-components";
 import {motion} from "framer-motion";
-import {loadDetail} from "../actions/detailReleaseAction";
+import {loadDetail} from "../../actions/detailReleaseAction";
 import {useSelector} from "react-redux";
 import {Link} from "react-router-dom";
-import imageLoading from "../img/loading.jpeg";
+import Loading from '../Utils/Loading'
+
 function Release({name, image, id, artist}) {
   const detailsLoading = useSelector((state) => state.detail.detailsLoading);
-  console.log(artist)
+
   const stringPathId = id.toString();
   const dispatch = useDispatch();
   const loadDetailHandler = () => {
@@ -21,8 +22,7 @@ function Release({name, image, id, artist}) {
       <Link to={`/release/${id}`}>
       {detailsLoading ? (
             <>
-              <LoadingImage src={imageLoading} alt="loading" />
-              <p>Loading</p>
+              <Loading/>
             </>
           ) : (
         <motion.img src={image} alt={name} />
@@ -56,9 +56,5 @@ h5 {
   color: black;
 }
 `
-const LoadingImage = styled.img`
-  width: 13vw;
-  height: 20vh;
-  transform: rotate(360deg);
-`;
+
 export default Release;

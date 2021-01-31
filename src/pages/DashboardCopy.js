@@ -1,20 +1,26 @@
 import React from 'react'
 import {Switch, Route} from "react-router-dom";
+import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
 //CSS
 import styled from "styled-components";
 //COMPONENTS
-import Nav from "../components/Nav";
-import SideNav from "../components/SideNav";
-import Library from "../components/Library";
+import Nav from "../components/NavBar/Nav";
+import SideNav from "../components/SideNavBar/SideNav";
+import Library from "../components/SideNavBar/Library";
 
 //import imageLoading from "../img/loading.jpeg";
-import Releases from "./Releases";
+import Releases from "../components/LabelComponents/Releases";
 import Feed from "../components/Feed";
-import Reccomendations from "../components/Reccomendations";
+import Reccomendations from "../components/SideNavBar/Reccomendations";
 import Search from '../components/Search'
+import Loading from '../components/Utils/Loading';
 
 function DashboardCopy() {
+  const { isLoading } = useAuth0();
 
+  if (isLoading) {
+    return <Loading />;
+  }
 
 
   return (

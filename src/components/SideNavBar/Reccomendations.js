@@ -1,10 +1,11 @@
 import React from "react";
-import Release from "./Release";
+import Release from "../LabelComponents/Release";
 import styled from "styled-components";
 import {useLocation} from "react-router-dom";
 import {useSelector} from "react-redux";
-import imageLoading from "../img/loading.jpeg";
-import ReleaseDetail from "./ReleaseDetail";
+import Loading from '../Utils/Loading'
+
+import ReleaseDetail from "../LabelComponents/ReleaseDetail";
 import {motion, AnimatePresence, AnimateSharedLayout} from "framer-motion";
 
 function Reccomendations() {
@@ -27,8 +28,7 @@ function Reccomendations() {
         >
           {detailsLoading ? (
             <>
-              <LoadingImage src={imageLoading} alt="loading" />
-              <p>Loading</p>
+            <Loading/>
             </>
           ) : (
             <>
@@ -216,9 +216,5 @@ const IndividualRelease = styled(motion.div)`
     padding: 0px 10px;
   }
 `;
-const LoadingImage = styled.img`
-  width: 13vw;
-  height: 20vh;
-  transform: rotate(360deg);
-`;
+
 export default Reccomendations;

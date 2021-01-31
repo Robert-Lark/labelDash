@@ -6,7 +6,7 @@ import { Switch, Route } from 'react-router-dom'
 //CSS
 import styled from "styled-components";
 //import {mediaPhone, mediaTabletPortrait, mediaTabletLandscape, mediaLargeDesktop} from '../utils/mediaMixins'
-import Nav from '../components/Nav'
+import Nav from '../components/NavBar/Nav'
 import Loading from '../components/Loading'
 //IMG
 import denovaliLogo from "../img/denovaliLogo.jpg";
@@ -15,10 +15,10 @@ import kirecordsLogo from "../img/kirecordsLogo.jpg";
 import miasmah_logo from "../img/miasmah_logo.jpg";
 import SONICPIECES_LOGO from "../img/SONICPIECES_LOGO.jpg";
 //import imageLoading from "../img/loading.jpeg";
-import Releases from "./Releases";
+import Releases from "../components/LabelComponents/Releases";
 import {useSelector} from "react-redux";
 import Feed from "../components/Feed";
-import Reccomendations from "../components/Reccomendations";
+import Reccomendations from "../components/SideNavBar/Reccomendations";
 
 function Dashboard() {
   const [reccomendations, setReccomendations] = useState(false);

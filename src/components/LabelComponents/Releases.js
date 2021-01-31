@@ -5,10 +5,10 @@ import {useSelector} from "react-redux";
 import {useLocation} from "react-router-dom";
 
 //Components
-import Release from "../components/Release";
-import Search from "../components/Search";
-import Loading from "../components/Loading";
-import ReleaseDetail from "../components/ReleaseDetail";
+import Release from "./Release";
+import Search from "../Search";
+import Loading from "../Utils/Loading";
+import ReleaseDetail from "./ReleaseDetail";
 
 //styling
 import styled from "styled-components";
