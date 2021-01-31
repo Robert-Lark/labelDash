@@ -2,17 +2,19 @@ import React, {useState} from "react";
 import {useDispatch} from "react-redux";
 import {loadReleases} from "../actions/releasesActions";
 import {loadReccomended} from "../actions/reccomendedAction";
+import { Switch, Route } from 'react-router-dom'
 //CSS
 import styled from "styled-components";
 //import {mediaPhone, mediaTabletPortrait, mediaTabletLandscape, mediaLargeDesktop} from '../utils/mediaMixins'
 import Nav from '../components/Nav'
+import Loading from '../components/Loading'
 //IMG
 import denovaliLogo from "../img/denovaliLogo.jpg";
 import ErasedTapesLogo from "../img/ErasedTapesLogo.png";
 import kirecordsLogo from "../img/kirecordsLogo.jpg";
 import miasmah_logo from "../img/miasmah_logo.jpg";
 import SONICPIECES_LOGO from "../img/SONICPIECES_LOGO.jpg";
-import imageLoading from "../img/loading.jpeg";
+//import imageLoading from "../img/loading.jpeg";
 import Releases from "./Releases";
 import {useSelector} from "react-redux";
 import Feed from "../components/Feed";
@@ -41,10 +43,10 @@ function Dashboard() {
       <Nav/>
       <BodyContainer>
         <ButtonContainer>
-          {/* <Button>
-            <h3>Your Collection</h3>
-          </Button>
           <Button>
+            <h3>Library</h3>
+          </Button>
+          {/* <Button>
             <h3>Request A Title</h3>
           </Button> */}
           <Button>
@@ -118,8 +120,8 @@ function Dashboard() {
           <InstructionContainer
             style={all ? {display: "none"} : {display: "auto"}}
           >
-            <LoadingImage src={imageLoading} alt="loading" />
-            <p>Loading</p>
+            <Loading/>
+            
           </InstructionContainer>
         ) : (
           <></>
@@ -310,12 +312,12 @@ const InstructionContainer = styled.div`
     width: 70vw;
   }
 `;
-const LoadingImage = styled.img`
-  width: 13vw;
-  height: 20vh;
-  transform: rotate(360deg);
-  @media (max-width: 600px) {
-    width: 40vw;
-  }
-`;
+// const LoadingImage = styled.img`
+//   width: 13vw;
+//   height: 20vh;
+//   transform: rotate(360deg);
+//   @media (max-width: 600px) {
+//     width: 40vw;
+//   }
+// `;
 export default Dashboard;

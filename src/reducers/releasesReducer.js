@@ -14,7 +14,7 @@ const releasesReducer = (state = initState, action) => {
     case "FETCH_RELEASES":
       return {...state, loading: true};
     case "FETCH_RELEASES_SUCCESS":
-      return {...state, all: action.payload.all, label: action.payload.label, loading: false};
+      return {...state, all: action.payload.all.sort((a, b) => b.year - a.year), label: action.payload.label, loading: false};
     default:
       return {...state};
   }

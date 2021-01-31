@@ -1,25 +1,27 @@
 import React from "react";
-import ReleaseDetail from "../components/ReleaseDetail";
+
 //redux
 import {useSelector} from "react-redux";
 import {useLocation} from "react-router-dom";
 
 //Components
 import Release from "../components/Release";
-import imageLoading from "../img/loading.jpeg";
 import Search from "../components/Search";
+import Loading from "../components/Loading";
+import ReleaseDetail from "../components/ReleaseDetail";
 //styling
 import styled from "styled-components";
 import {motion, AnimatePresence, AnimateSharedLayout} from "framer-motion";
 
-function ReleasesSmall({loading}) {
+function ReleasesSmall() {
   const location = useLocation();
   const pathId = location.pathname.split("/")[2];
-  const releaseInfo = useSelector((state) => state.releases.all);
+  const {all, loading} = useSelector((state) => state.releases);
   const labelInfo = useSelector((state) => state.releases.label);
-  const ordered = releaseInfo.sort((a, b) => b.year - a.year);
 
-  return (
+  return all === 0 ? (
+    <Loading />
+  ) : (
     <ReleasesList>
       <AnimateSharedLayout type="crossfade">
         <AnimatePresence>
@@ -34,8 +36,7 @@ function ReleasesSmall({loading}) {
         >
           {loading ? (
             <>
-              <LoadingImage src={imageLoading} alt="loading" />
-              <p>Loading</p>
+              <Loading />
             </>
           ) : (
             <img
@@ -49,7 +50,7 @@ function ReleasesSmall({loading}) {
         </div>
         <IndividualRelease>
           {/* eslint-disable-next-line */}
-          {ordered.map((release) => {
+          {all.map((release) => {
             return (
               <Release
                 name={release.title}
@@ -72,6 +73,7 @@ function ReleasesSmall({loading}) {
 
 const ReleasesList = styled(motion.div)`
   padding: 0rem 5rem;
+  max-height: 80vh;
 
   h2 {
     padding: 5rem 0rem;
@@ -92,7 +94,6 @@ const ReleasesList = styled(motion.div)`
   @media (max-width: 600px) {
     width: 60vw;
   }
-
 `;
 const IndividualRelease = styled(motion.div)`
   min-height: 80vh;
@@ -101,13 +102,12 @@ const IndividualRelease = styled(motion.div)`
   gap: 1rem;
   @media (min-width: 1400px) {
     grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-  gap: 1rem;
+    gap: 1rem;
   }
-  
+
   @media (max-width: 1400px) {
     padding: 15px;
   }
-
 `;
 
 const LoadingImage = styled.img`

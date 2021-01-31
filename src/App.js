@@ -3,13 +3,13 @@ import GlobalStyles from './components/GlobalStyles'
 
 import {Route} from 'react-router-dom'
 
-import Dashboard from "./pages/Dashboard";
+import DashboardCopy from "./pages/DashboardCopy";
 function App() {
   return (
-    <div className="App">
+    <div style={{maxHeight:"99vh"}}>
       <GlobalStyles></GlobalStyles>
       <Route path={["/release/id", "/"]}></Route>
-<Dashboard/>
+<DashboardCopy/>
 
     </div>
   );
