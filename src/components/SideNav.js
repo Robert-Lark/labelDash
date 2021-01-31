@@ -97,15 +97,14 @@ function SideNav(props) {
 const ButtonContainer = styled.div`
   box-shadow: 0px 0px 10px 4px #e0e0e0;
   border: 1px solid #daf1ff;
-  max-height: 90vh;
+  max-height: 85vh;
   width: 40vw;
   padding: 50px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  /* display: grid;
-  gap: 20px; */
+
   @media (max-width: 1400px) {
     padding-top: 10px;
     height: 90vh;
