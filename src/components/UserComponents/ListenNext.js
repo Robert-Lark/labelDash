@@ -19,8 +19,7 @@ function ListenNext(props) {
 }
 
 const Container = styled.div`
-box-shadow: 0px 0px 10px 4px #e0e0e0;
-  border: 1px solid #daf1ff;
+border: 1px solid gainsboro;
   border-radius: 10px;
   width: 14vw;
   text-align: center;

@@ -12,23 +12,32 @@ function NextShipment(props) {
         picture,
         picture,
         picture,
+        picture,
+        picture,
+        picture,
+        picture,
+        picture,
+        picture,
+        picture,
+        picture,
+        picture,
+        picture,
       ];
     return (
         <Container>
             <h4>Next Shipment</h4>
             <Image>
+            <Button>Request A Title</Button>
         {data.map((image) => (
           <img src={image} alt="topTenImage" />
         ))}
-                <Button>Request A Title</Button>
       </Image>
         </Container>
     );
 }
 
 const Container = styled.div`
-box-shadow: 0px 0px 10px 4px #e0e0e0;
-  border: 1px solid #daf1ff;
+border: 1px solid gainsboro;
   text-align: center;
   border-radius: 10px;
   img {
@@ -36,8 +45,12 @@ box-shadow: 0px 0px 10px 4px #e0e0e0;
     max-height: 100%;
     border-radius: 20px;
   }
+  h4{
+      padding: 5px;
+  }
 `
 const Image = styled.div`
+margin-left: 13px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 2px;

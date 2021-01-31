@@ -7,8 +7,6 @@ import ListenNext from "../UserComponents/ListenNext";
 import TopTen from "../UserComponents/TopTen";
 import NextShipment from "../UserComponents/NextShipment";
 import InLibrary from "../UserComponents/InLibrary";
-import RequestATitle from "../UserComponents/RequestATitle";
-import AddToLibrary from "../UserComponents/AddToLibrary";
 
 const Library = () => {
   return (
@@ -17,49 +15,38 @@ const Library = () => {
         <ProfileSection />
         <ListenNext />
       </One>
-
       <Two>
         <TopTen />
       </Two>
-
       <Three>
         <NextShipment />
         <InLibrary />
       </Three>
-
-      <Four>
-        <RequestATitle />
-        <AddToLibrary />
-      </Four>
     </Container>
   );
 };
 const Container = styled.div`
-border: 1px solid gold;
-max-width: 53vw;
-max-height: 80vh;
-display: grid;
-grid-template-rows: 2fr 1fr 2fr 2fr;
-gap: 2vh;
-`
+  max-width: 53vw;
+  max-height: 80vh;
+  display: grid;
+  grid-template-rows: 3fr 1fr 5fr;
+  gap: 4vh;
+`;
 const One = styled.div`
-border: 1px solid red;
-max-width: 50vw;
-display: grid;
-grid-template-columns: 3fr 1fr;
+  max-width: 50vw;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
 `;
 
 const Two = styled.div`
-display: flex;
-max-width: 50vw;
+  display: flex;
+  max-width: 50vw;
 `;
 const Three = styled.div`
-display: flex;
-max-width: 50vw;
-`;
-const Four = styled.div`
-display: flex;
-max-width: 50vw;
+  max-width: 50vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5vw;
 `;
 
 export default withAuthenticationRequired(Library, {

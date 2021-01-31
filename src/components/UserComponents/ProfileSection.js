@@ -28,20 +28,18 @@ const ProfileSection = () => {
   );
 };
 
-{
+
   /* <div>
         <pre>{JSON.stringify(user, null, 2)}</pre>
       </div> */
-}
+
 
 const ProfileSectionContainer = styled.div`
   width: 35vw;
-  
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  box-shadow: 0px 0px 10px 4px #e0e0e0;
-  border: 1px solid #daf1ff;
+  border: 1px solid gainsboro;
   border-radius: 10px;
   p{
     

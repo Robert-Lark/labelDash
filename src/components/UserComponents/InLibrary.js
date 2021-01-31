@@ -12,6 +12,16 @@ function InLibrary(props) {
         picture,
         picture,
         picture,
+        picture,
+        picture,
+        picture,
+        picture,
+        picture,
+        picture,
+        picture,
+        picture,
+        picture,
+        picture,
       ];
     return (
         <Container>
@@ -27,20 +37,25 @@ function InLibrary(props) {
 }
 
 const Container = styled.div`
-box-shadow: 0px 0px 10px 4px #e0e0e0;
-  border: 1px solid #daf1ff;
+border: 1px solid gainsboro;
+
   text-align: center;
   border-radius: 10px;
+  
   img {
     max-width: 6vw;
     max-height: 100%;
     border-radius: 20px;
+  }
+  h4{
+      padding: 5px;
   }
 `
 const Image = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 2px;
+  margin-left: 13px;
 `;
 const Button = styled.button`
     max-width: 6vw;
