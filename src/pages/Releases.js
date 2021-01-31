@@ -9,6 +9,7 @@ import Release from "../components/Release";
 import Search from "../components/Search";
 import Loading from "../components/Loading";
 import ReleaseDetail from "../components/ReleaseDetail";
+
 //styling
 import styled from "styled-components";
 import {motion, AnimatePresence, AnimateSharedLayout} from "framer-motion";

@@ -97,7 +97,7 @@ function SideNav(props) {
 const ButtonContainer = styled.div`
   box-shadow: 0px 0px 10px 4px #e0e0e0;
   border: 1px solid #daf1ff;
-  max-height: 85vh;
+  max-height: 90vh;
   width: 40vw;
   padding: 50px;
   display: grid;
@@ -110,7 +110,7 @@ const ButtonContainer = styled.div`
     display: flex;
     flex-direction: column;
     padding: 10px;
-    width: 38vw;
+    width: 43vw;
   }
   @media (orientation: landscape) and (max-width: 900px) {
     width: 20vw;
@@ -133,9 +133,12 @@ const Button = styled.div`
     border-radius: 20px;
     max-width: 50%;
     max-height: 100%;
-
     padding: 5px;
+    @media (max-width: 400px){
+        max-width: 70%;
+    }
   }
+  
   @media (min-width: 1400px) {
     h3 {
       font-size: 3rem;
