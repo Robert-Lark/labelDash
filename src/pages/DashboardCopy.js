@@ -1,36 +1,21 @@
-import React, {useState} from "react";
-import {useDispatch} from "react-redux";
-import {loadReleases} from "../actions/releasesActions";
-import {loadReccomended} from "../actions/reccomendedAction";
+import React from 'react'
 import {Switch, Route} from "react-router-dom";
 //CSS
 import styled from "styled-components";
 //COMPONENTS
 import Nav from "../components/Nav";
-import Loading from "../components/Loading";
 import SideNav from "../components/SideNav";
 import Library from "../components/Library";
 
 //import imageLoading from "../img/loading.jpeg";
 import Releases from "./Releases";
-import {useSelector} from "react-redux";
 import Feed from "../components/Feed";
 import Reccomendations from "../components/Reccomendations";
 import Search from '../components/Search'
 
 function DashboardCopy() {
-  const [reccomendations, setReccomendations] = useState(false);
 
-  const {all, loading} = useSelector((state) => state.releases);
-  const dispatch = useDispatch();
-  const labelHandler = (id) => {
-    dispatch(loadReleases(id));
-    setReccomendations(false);
-  };
-  const reccomended = () => {
-    setReccomendations(true);
-    dispatch(loadReccomended());
-  };
+
 
   return (
     <Container>

@@ -104,15 +104,9 @@ const IndividualRelease = styled(motion.div)`
     grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
     gap: 1rem;
   }
-
   @media (max-width: 1400px) {
     padding: 15px;
   }
 `;
 
-const LoadingImage = styled.img`
-  width: 13vw;
-  height: 20vh;
-  transform: rotate(360deg);
-`;
 export default ReleasesSmall;
