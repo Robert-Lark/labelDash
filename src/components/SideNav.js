@@ -100,8 +100,12 @@ const ButtonContainer = styled.div`
   max-height: 90vh;
   width: 40vw;
   padding: 50px;
-  display: grid;
-  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  /* display: grid;
+  gap: 20px; */
   @media (max-width: 1400px) {
     padding-top: 10px;
     height: 90vh;
