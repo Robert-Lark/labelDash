@@ -1,7 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import {withAuthenticationRequired} from "@auth0/auth0-react";
-import Loading from "../Utils/Loading";
 import ProfileSection from "../UserComponents/ProfileSection";
 import ListenNext from "../UserComponents/ListenNext";
 import TopTen from "../UserComponents/TopTen";
@@ -49,6 +47,4 @@ const Three = styled.div`
   gap: 5vw;
 `;
 
-export default withAuthenticationRequired(Library, {
-  onRedirecting: () => <Loading />,
-});
+export default Library;
