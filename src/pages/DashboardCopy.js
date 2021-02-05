@@ -1,7 +1,8 @@
 import React from 'react'
 import {Switch, Route} from "react-router-dom";
 import { useAuth0} from "@auth0/auth0-react";
-import ProtectedRoute from "../auth/protected-route";
+//import ProtectedRoute from "../auth/protected-route";
+import PrivateRoute from "../auth/privateRoute"
 //CSS
 import styled from "styled-components";
 //COMPONENTS
@@ -15,6 +16,7 @@ import Feed from "../components/Feed";
 import Reccomendations from "../components/SideNavBar/Reccomendations";
 import Search from '../components/Search'
 import Loading from '../components/Utils/Loading';
+import LoginForm from '../components/Login/LogIn';
 
 function DashboardCopy() {
   const { isLoading } = useAuth0();
@@ -33,12 +35,13 @@ function DashboardCopy() {
         <InstructionContainer>
           <Switch>
             <Route exact path="/" component={Feed} />
+            <Route path="/login" component={LoginForm} />
             <Route path="/denovali" component={Releases} />
             <Route path="/sonicPieces" component={Releases} />
             <Route path="/miasmah" component={Releases} />
             <Route path="/erasedTapes" component={Releases} />
             <Route path="/ki" component={Releases} />
-            <ProtectedRoute path="/library" component={Library} />
+            <PrivateRoute exact path="/protected" component={Library} />
             <Route path="/search" component={Search} />
             <Route path="/reccomendations" component={Reccomendations} />
           </Switch>

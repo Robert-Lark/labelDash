@@ -1,11 +1,49 @@
-import React from "react";
+import React, {useEffect} from "react";
 import styled from "styled-components";
 import {useAuth0} from "@auth0/auth0-react";
 
+import {useDispatch} from "react-redux";
+
+import {loadUserInfo} from "../../actions/profileInfoAction";
+
 const ProfileSection = () => {
+  const dispatch = useDispatch();
   const {user} = useAuth0();
   const {name, picture, email, nickname} = user;
-  console.log(user);
+
+useEffect(() => {
+  
+    dispatch(loadUserInfo(email));
+ // eslint-disable-next-line
+  },[])
+//   useEffect(() => {
+//     axios.get(`https://sonicarchbackend.herokuapp.com/library/`)
+//     .then(function (response) {
+//       const idInfo = response.data.filter((userInfo) => userInfo.nickname === nickname)
+//       console.log(idInfo);
+//       dispatch(loadUserInfo())
+//     })
+//     .catch(function (error) {
+//       console.log(error);
+//     });
+// },[nickname])
+//   const ExternalApiUsers = () => {
+//     axios.get(`https://sonicarchbackend.herokuapp.com/library/`)
+//   .then(function (response) {
+//     const idInfo = response.filter((userInfo) => userInfo.nickname === nickname)
+//     console.log(idInfo);
+
+//   })
+//   .catch(function (error) {
+//     console.log(error);
+//   });
+//   };
+
+
+
+
+
+
 
   return (
     <ProfileSectionContainer>

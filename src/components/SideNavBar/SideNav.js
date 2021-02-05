@@ -26,6 +26,11 @@ function SideNav(props) {
 
   return (
     <ButtonContainer>
+      <Link to="/login">
+        <Button>
+          <h3>Login/signup</h3>
+        </Button>
+      </Link>
       <Link to="/library">
         <Button onClick={() => userLibrary()}>
           <h3>Library</h3>

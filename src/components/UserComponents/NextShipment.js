@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import {useAuth0} from "@auth0/auth0-react";
-
+import { v4 as uuidv4 } from 'uuid';
 
 function NextShipment(props) {
     const {user} = useAuth0();
@@ -29,7 +29,7 @@ function NextShipment(props) {
             <Image>
             <Button>Request A Title</Button>
         {data.map((image) => (
-          <img src={image} alt="topTenImage" />
+          <img src={image} alt="topTenImage" key={uuidv4()}/>
         ))}
       </Image>
         </Container>
