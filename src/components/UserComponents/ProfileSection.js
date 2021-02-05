@@ -1,19 +1,24 @@
 import React, {useEffect} from "react";
 import styled from "styled-components";
 import {useAuth0} from "@auth0/auth0-react";
+import axios from 'axios'
+//import {useDispatch} from "react-redux";
 
-import {useDispatch} from "react-redux";
-
-import {loadUserInfo} from "../../actions/profileInfoAction";
+//import {loadUserInfo} from "../../actions/profileInfoAction";
 
 const ProfileSection = () => {
-  const dispatch = useDispatch();
+  //const dispatch = useDispatch();
   const {user} = useAuth0();
   const {name, picture, email, nickname} = user;
 
 useEffect(() => {
-  
-    dispatch(loadUserInfo(email));
+  axios.get(`https://sonicarchbackend.herokuapp.com/profile/`)
+      .then(function (response) {
+        console.log(response)
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
  // eslint-disable-next-line
   },[])
 //   useEffect(() => {

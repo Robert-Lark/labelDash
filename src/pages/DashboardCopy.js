@@ -1,8 +1,8 @@
 import React from 'react'
 import {Switch, Route} from "react-router-dom";
 import { useAuth0} from "@auth0/auth0-react";
-//import ProtectedRoute from "../auth/protected-route";
-import PrivateRoute from "../auth/privateRoute"
+import ProtectedRoute from "../auth/protected-route";
+//import PrivateRoute from "../auth/privateRoute"
 //CSS
 import styled from "styled-components";
 //COMPONENTS
@@ -41,7 +41,7 @@ function DashboardCopy() {
             <Route path="/miasmah" component={Releases} />
             <Route path="/erasedTapes" component={Releases} />
             <Route path="/ki" component={Releases} />
-            <PrivateRoute exact path="/protected" component={Library} />
+            <ProtectedRoute path="/library" component={Library} />
             <Route path="/search" component={Search} />
             <Route path="/reccomendations" component={Reccomendations} />
           </Switch>

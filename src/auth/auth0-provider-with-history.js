@@ -11,12 +11,12 @@ const Auth0ProviderWithHistory = ({ children }) => {
   const onRedirectCallback = (appState) => {
     history.push(appState?.returnTo || window.location.pathname);
   };
-
+  const uri='http://localhost:4040/library';
   return (
     <Auth0Provider
       domain={domain}
       clientId={clientId}
-      redirectUri={window.location.origin}
+      redirectUri={uri}
       onRedirectCallback={onRedirectCallback}
       audience={audience}
     >
