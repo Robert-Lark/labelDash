@@ -20,9 +20,9 @@ function SideNav(props) {
   const reccomended = () => {
     dispatch(loadReccomended());
   };
-  const userLibrary = () => {
-    console.log("works");
-  };
+  // const userLibrary = () => {
+  //   console.log("works");
+  // };
 
   return (
     <ButtonContainer>
@@ -31,11 +31,11 @@ function SideNav(props) {
           <h3>Login/signup</h3>
         </Button>
       </Link> */}
-      <Link to="/library">
+      {/* <Link to="/library">
         <Button onClick={() => userLibrary()}>
           <h3>Library</h3>
-        </Button>
-      </Link>
+        </Button> */}
+      {/* </Link> */}
       <Link to="/search">
         <Button>
           <h3>Search</h3>
