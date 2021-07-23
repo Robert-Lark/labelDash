@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^12.6.0",
     "axios": "^0.21.1",
     "framer-motion": "^3.1.4",
+    "nprogress": "^0.2.0",
     "pixelmatch": "^5.2.1",
     "pngjs": "^6.0.0",
     "react": "^17.0.1",

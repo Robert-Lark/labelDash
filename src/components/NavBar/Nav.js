@@ -7,7 +7,7 @@ function Nav(props) {
   return (
     <NavBar>
       <h1>A Collection Of Sonic Architecture</h1>
-      <AuthNav/>
+      {/* <AuthNav/> */}
     </NavBar>
   );
 }

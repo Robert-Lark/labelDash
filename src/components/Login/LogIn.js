@@ -56,7 +56,7 @@ const formSubmit = (data) => {
 }
 
 const Formcontainer = styled.div`
-border: 4px solid red;
+
 `
 const Button = styled.button`
 

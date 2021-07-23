@@ -22,7 +22,19 @@ export const loadReleases = (id) => async (dispatch) => {
   const releasesByTitle = {};
   const releases = [];
   //checks dictionary to see if record by a certain title is already in the dictionary
-  //if it is, skip this record, else, add it to the dictionary
+  
+  //if it is, move on to check the format, else, add it to the dictionary
+
+  //overwrite and replace if the format isnt CD or Vinyl
+  //POSSIBLE FORMATS
+  // FILE
+  // W/LBL
+  // PROMO
+  // TP
+  // PAP
+  // CD
+  // VINYL
+//FIlter the data up front 
   // eslint-disable-next-line
   releasesData.map((release) => {
     if (!release.format.includes("File") && release.thumb) {
@@ -45,8 +57,8 @@ export const loadReleases = (id) => async (dispatch) => {
     }
   });
   //add the records in dictionary to releases array to pass to reducer
-  for (let prop in releasesByTitle) {
-    releases.push(releasesByTitle[prop]);
+  for (let title in releasesByTitle) {
+    releases.push(releasesByTitle[title]);
   }
   dispatch({
     type: "FETCH_RELEASES_SUCCESS",
